@@ -58,7 +58,7 @@ html {
 
 body {
   min-height: 100%;
-  /* color: black; */
+  font-family: 'Lato', sans-serif;
 }
 
 a {
@@ -66,15 +66,26 @@ a {
   color: inherit;
 }
 
+#content {
+  background: center / cover no-repeat url("../src/assets/pizza.jpg");
+}
 
 .site-header {
   display: flex;
-  background-color: black;;
-  color: white;
+  background-color: #000000eb;
+  color: #e0b46f;
   justify-content: space-between;
   align-items: center;
   height: 100px;
+  padding: 5px;
 
+}
+
+#logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px 0 10px;
 }
 
 
@@ -96,7 +107,7 @@ a {
   transform: rotate(-45deg);
   margin-right: -29px;
   margin-bottom: 5px;
-  font-size: 36px;
+  font-size: 40px;
 }
 
 
@@ -126,7 +137,7 @@ ul {
 
 
 main {
-  background: center / cover no-repeat url("../src/assets/pizza.jpg");
+  
   min-height: 90vh;
 }
 
@@ -134,7 +145,7 @@ main {
 
 
 footer {
-  background-color: black;
+  background-color: #000000eb;
   position: fixed;
   bottom: 0;
   width: 100%;
