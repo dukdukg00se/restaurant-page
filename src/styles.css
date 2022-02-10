@@ -70,13 +70,16 @@ a {
   background: center / cover no-repeat url("../src/assets/pizza.jpg");
 }
 
+
+
+
 .site-header {
   display: flex;
-  background-color: #000000eb;
-  color: #e0b46f;
+  background-color: #000000de;
+  color: #ecc756;
   justify-content: space-between;
   align-items: center;
-  height: 100px;
+  height: 10vh;
   padding: 5px;
 
 }
@@ -86,6 +89,7 @@ a {
   flex-direction: column;
   align-items: center;
   margin: 15px 0 10px;
+
 }
 
 
@@ -99,24 +103,35 @@ a {
   align-items: center;
 }
 
+
 #logo-link:hover {
   transform: scale(1.01);
 }
 
-#logo-span {
+/* #logo-span {
   transform: rotate(-45deg);
   margin-right: -29px;
   margin-bottom: 5px;
   font-size: 40px;
+} */
+
+#logo-crown {
+  height: auto;
+  width: 25px;
+  margin-left: 7px;
+  margin-top: 6px;
+
 }
-
-
-
+#logo-name {
+  font-size: 48px;
+  margin-left: 5px;
+}
 
 
 .nav-links {
   display: flex;
   border: solid 2px green;
+  letter-spacing: 1.2px;
 }
 
 .nav-list {
@@ -137,15 +152,19 @@ ul {
 
 
 main {
-  
-  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+#content-container {
+  color: white;
 }
 
 
 
-
 footer {
-  background-color: #000000eb;
+  background-color: #000000de;
   position: fixed;
   bottom: 0;
   width: 100%;
