@@ -16,66 +16,37 @@ a {
   color: inherit;
 }
 
-#content {
-  background: center / cover no-repeat url("../src/assets/pizza.jpg");
-}
-
-
-
-
 .site-header {
   display: flex;
-  background-color: #000000de;
+  background-color: black;
   color: #ecc756;
   justify-content: space-between;
   align-items: center;
   height: 10vh;
   padding: 10px;
-
-}
-
-#logo-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 15px 0 10px;
-
 }
 
 #logo-link {
   font-family: 'Tangerine', cursive;
   font-size: 44px;
   font-weight: 700;
-
   display: flex;
   align-items: center;
 }
-
 #logo-link:hover {
   transform: scale(1.01);
 }
-
-#logo-crown {
+#logo {
   height: auto;
-  width: 25px;
-  margin-left: 5px;
-  margin-top: 8px;
+  width: 118px;
+  margin-top: 28px;
+}
 
-}
-#logo-name {
-  font-size: 48px;
-  margin-left: 5px;
-}
 
 .nav-links {
   display: flex;
-  border: solid 2px green;
-  letter-spacing: 1.2px;
-}
-.nav-list {
-  display: flex;
   gap: 20px;
-  border: solid 2px purple;
+  letter-spacing: 1.2px;
 }
 ul {
   list-style-type: none;
@@ -91,11 +62,44 @@ ul {
 
 
 main {
-  display: flex;
+  background: center / cover no-repeat url("../src/assets/pizza-bkgrnd.jpg");
+  /* display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column; */
   height: 90vh;
+  padding: 20px;
 }
+
+#title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Tangerine', cursive;
+}
+
+h1 {
+  font-family: 'Tangerine', cursive;
+  font-size: 80px;
+  font-weight: 700;
+  color: #ecc756;
+}
+#title-span {
+  font-size: 88px;
+}
+#title-crown {
+
+}
+blockquote {
+  font-family: 'Lato', sans-serif;
+  color: white;
+  font-style: italic;
+  max-width: 545px;
+  margin: 0 auto 50px auto;
+  text-align: left;
+}
+
+
 #award-container {
   margin-bottom: 60px;
 }
@@ -107,7 +111,7 @@ main {
 }
 
 footer {
-  background-color: #000000de;
+  background-color: #000000;
   position: fixed;
   bottom: 0;
   width: 100%;
