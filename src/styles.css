@@ -23,26 +23,18 @@ a {
   justify-content: space-between;
   align-items: center;
   height: 10vh;
+  min-height: 72px;
   padding: 10px;
 }
 
-#logo-link {
-  font-family: 'Tangerine', cursive;
-  font-size: 44px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-}
 #logo-link:hover {
-  transform: scale(1.01);
+  transform: scale(1.02);
 }
-#logo {
+#logo-img {
   height: auto;
   width: 118px;
   margin-top: 28px;
 }
-
-
 .nav-links {
   display: flex;
   gap: 20px;
@@ -63,32 +55,27 @@ ul {
 
 main {
   background: center / cover no-repeat url("../src/assets/pizza-bkgrnd.jpg");
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; */
   height: 90vh;
   padding: 20px;
 }
-
-#title-container {
+#content-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: 'Tangerine', cursive;
+  width: 70vw;
+  padding: 1vw;
+  margin-left: 1vw;
 }
-
 h1 {
   font-family: 'Tangerine', cursive;
-  font-size: 80px;
+  font-size: 8vw;
   font-weight: 700;
   color: #ecc756;
+  margin: 53px auto 11px;
 }
-#title-span {
-  font-size: 88px;
-}
-#title-crown {
-
+#header-span {
+  font-size: 9vw;
 }
 blockquote {
   font-family: 'Lato', sans-serif;
@@ -97,6 +84,18 @@ blockquote {
   max-width: 545px;
   margin: 0 auto 50px auto;
   text-align: left;
+  display: flex;
+  font-size: 2vw;
+  flex-direction: column;
+}
+#quote {
+  text-align: justify;
+  line-height: 1.5;
+}
+cite {
+  align-self: flex-end;
+  font-size: 1.8vw;
+  margin-top: 5px;
 }
 
 
@@ -111,9 +110,42 @@ blockquote {
 }
 
 footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
   background-color: #000000;
   position: fixed;
   bottom: 0;
   width: 100%;
   height: 10vh;
+  min-height: 72px;;
+}
+.media-link {
+  margin: 3px;
+}
+/* .media-link:first-of-type {
+  margin: 10px;
+} */
+.media-img:hover {
+  transform: scale(1.1);
+}
+#credits {
+  color: #ecc756;
+  letter-spacing: 1.1px;
+}
+
+#github-logo {
+  height: 24px;
+  width: 24px;
+  border-radius: 5px;
+  margin-bottom: -4px;
+}
+#github-link {
+  fill: #ecc756;
+}
+
+#github-link:hover, #github-logo:hover {
+  color: white;
+  fill: white;
 }
