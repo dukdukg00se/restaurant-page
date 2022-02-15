@@ -16,17 +16,16 @@ a {
   color: inherit;
 }
 
-.site-header {
+#header {
   display: flex;
-  background-color: black;
-  color: #ecc756;
   justify-content: space-between;
   align-items: center;
+  background-color: black;
+  color: #ecc756;
   height: 10vh;
   min-height: 72px;
   padding: 10px;
 }
-
 #logo-link:hover {
   transform: scale(1.02);
 }
@@ -40,21 +39,26 @@ a {
   gap: 20px;
   letter-spacing: 1.2px;
 }
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-.nav-item:hover {
-  color: white;
-}
 .nav-item:last-of-type {
   margin-right: 20px;
 }
-
+.nav-item:hover,
+#github-link:hover {
+  color: white;
+}
 
 main {
-  background: center / cover no-repeat url("../src/assets/pizza-bkgrnd.jpg");
+  background-color: #1f1f1f; /* fallback color */
+  background-image: 
+  linear-gradient(
+    90deg,
+      rgba(255, 255, 255, 0),
+      rgba(50, 50, 50, 0.8)
+    ),
+    url("../src/assets/pizza-bkgrnd.jpg");
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: center;
   height: 90vh;
   padding: 20px;
 }
@@ -74,7 +78,7 @@ h1 {
   color: #ecc756;
   margin: 53px auto 11px;
 }
-#header-span {
+#title-span {
   font-size: 9vw;
 }
 blockquote {
@@ -95,7 +99,7 @@ blockquote {
 cite {
   align-self: flex-end;
   font-size: 1.8vw;
-  margin-top: 5px;
+  margin-top: 11px;
 }
 
 
@@ -144,8 +148,6 @@ footer {
 #github-link {
   fill: #ecc756;
 }
-
-#github-link:hover, #github-logo:hover {
-  color: white;
+#github-link:hover {
   fill: white;
 }
