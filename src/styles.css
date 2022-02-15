@@ -67,29 +67,28 @@ main {
   flex-direction: column;
   align-items: center;
   font-family: 'Tangerine', cursive;
-  width: 70vw;
-  padding: 1vw;
-  margin-left: 1vw;
+  width: 90vw;
+  padding: 15px;
 }
 h1 {
   font-family: 'Tangerine', cursive;
-  font-size: 8vw;
+  font-size: 8vmin;
   font-weight: 700;
   color: #ecc756;
-  margin: 53px auto 11px;
+  margin: 40px auto 10px;
 }
 #title-span {
-  font-size: 9vw;
+  font-size: 9vmin;
 }
 blockquote {
   font-family: 'Lato', sans-serif;
   color: white;
   font-style: italic;
   max-width: 545px;
-  margin: 0 auto 50px auto;
+  margin: 0 1vw 50px;
   text-align: left;
   display: flex;
-  font-size: 2vw;
+  font-size: 2vmin;
   flex-direction: column;
 }
 #quote {
