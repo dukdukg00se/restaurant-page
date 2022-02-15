@@ -75,7 +75,7 @@ h1 {
   font-size: 8vmin;
   font-weight: 700;
   color: #ecc756;
-  margin: 40px auto 10px;
+  margin: 40px auto 25px;
 }
 #title-span {
   font-size: 9vmin;
@@ -85,20 +85,20 @@ blockquote {
   color: white;
   font-style: italic;
   max-width: 545px;
-  margin: 0 1vw 50px;
+  margin: 0 1vw 20px;
   text-align: left;
   display: flex;
   font-size: 2vmin;
   flex-direction: column;
 }
-#quote {
+.quote {
   text-align: justify;
   line-height: 1.5;
 }
 cite {
   align-self: flex-end;
-  font-size: 1.8vw;
-  margin-top: 11px;
+  font-size: 1.8vmin;
+  margin-top: 6px;
 }
 
 
