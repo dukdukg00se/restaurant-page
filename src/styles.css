@@ -144,14 +144,23 @@ footer {
 @media (max-width: 560px) {
   #header {
     flex-direction: column;
-    height: 20vh;
+    height: 120px;
+    padding: 5px;
+  }
+  #logo-link {
+    height: 94px;
+    width: 120px;
+    /* object-fit: cover; */
   }
   #logo-img {
-    margin-top: 10px;
+    object-fit: cover; /* crop image but preserve aspect ratio */
+    width: 118px;
+    object-position: -19px 2px;
+    margin: 0;
   }
   .nav-links {
-    margin-top: -10px;
-  
+    /* margin-top: -10px; */
+    
   }
 
 }
