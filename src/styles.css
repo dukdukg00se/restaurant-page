@@ -37,7 +37,7 @@ a {
   width: 118px;
   margin-top: 31px;
 }
-#logo-img:hover {
+#logo-link:hover {
   transform: scale(1.02);
 }
 .nav-links {
@@ -144,16 +144,18 @@ footer {
 @media (max-width: 560px) {
   #header {
     flex-direction: column;
-    height: 120px;
-    padding: 5px;
+    height: auto; /* contain contens w/o cropping */
+    padding: 11px;
+    gap: 11px;
   }
   #logo-link {
-    height: 94px;
-    width: 120px;
-    /* object-fit: cover; */
+    height: 84px;
+    width: 94px;
+    overflow: hidden; /* hide image overflow */
   }
   #logo-img {
     object-fit: cover; /* crop image but preserve aspect ratio */
+    height: 84px;
     width: 118px;
     object-position: -19px 2px;
     margin: 0;
