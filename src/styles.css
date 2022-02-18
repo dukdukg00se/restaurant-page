@@ -9,6 +9,8 @@ html, body {
 body {
   min-height: 615px;
   font-family: 'Lato', sans-serif;
+
+  min-width: 300px;
 }
 
 a {
@@ -141,7 +143,7 @@ footer {
 
 
 
-@media (max-width: 560px) {
+@media (max-width: 570px) {
   #header {
     flex-direction: column;
     height: auto; /* contain contens w/o cropping */
@@ -161,8 +163,44 @@ footer {
     margin: 0;
   }
   .nav-links {
-    /* margin-top: -10px; */
-    
+    font-size: 90%;
+    width: 100%;
+    justify-content: space-evenly;
   }
+  .nav-item:last-of-type {
+    margin: 0;
+  }
+
+  main {
+    display: block;
+  }
+  #main-content {
+    width: 100%;
+    padding: 18px;
+    margin: 7vh 0 0;
+    gap: 3vh;
+  }
+  h1 {
+    font-size: 40px;
+  }
+  #title-span {
+    font-size: 45px;
+  } 
+  blockquote {
+    font-size: 14px;
+  }
+  cite {
+    font-size: 13px;
+  }
+
+  footer {
+    flex-direction: column;
+    height: auto;
+    padding: 22px 0 15px;
+    gap: 11px;
+    font-size: 90%;
+
+  }
+
 
 }
