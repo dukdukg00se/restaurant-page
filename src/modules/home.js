@@ -1,8 +1,14 @@
-import logo from '../assets/images/restaurant-logo.png'; 
+import restaurantLogo from '../assets/images/restaurant-logo.png'; 
+import facebookLogo from '../assets/images/facebook-logo.svg';
+import instagramLogo from '../assets/images/instagram-logo.svg';
+import twitterLogo from '../assets/images/twitter-logo.svg';
+import linkedinLogo from '../assets/images/linkedin-logo.svg';
+
 
 export default function createHome() {
   const content = document.querySelector('#content');
 
+  //**** header content
   const header = document.createElement('header');
   header.id = 'header';
 
@@ -12,51 +18,19 @@ export default function createHome() {
 
   const logoImg = document.createElement('img');
   logoImg.id = 'logo-img';
-  logoImg.src = logo;
+  logoImg.src = restaurantLogo;
+
+
+
   logoImg.alt = 'restaurant logo';
+  logoLink.appendChild(logoImg);
 
   const navLinks = document.createElement('ul');
   navLinks.classList.add('nav-links');
 
+  header.append(logoLink, navLinks);
 
-  // let data = [
-  //   {
-  //     'id': 'story',
-  //     'href': '#story',
-  //   },
-  //   {
-  //     'id': 'menu',
-  //     'href': '#menu',
-  //   },
-  //   {
-  //     'id': 'locations',
-  //     'href': '#locations',
-  //   },
-  //   {
-  //     'id': 'contact',
-  //     'href': '#contact',
-  //   }
-  // ];
-  // let navAnchorText = [
-  //   'Our Story',
-  //   'Menu',
-  //   'Location & Hours',
-  //   'Contact'
-  // ]
-
-  // for (let i = 0; i < data.length; i++) {
-  //   const navItem = document.createElement('li');
-  //   navItem.classList.add('nav-item');
-
-  //   const navAnchor = document.createElement('a');
-  //   setAttributes(navAnchor, data[i]);
-  //   navAnchor.textContent = navAnchorText[i];
-    
-  //   navItem.append(navAnchor);
-
-  //   navLinks.append(navItem);
-  // }
-
+  // attributes for nav anchor elements
   let navAnchorAttrs = [
     {
       'id': 'story',
@@ -79,7 +53,6 @@ export default function createHome() {
       'textContent': 'Contact'
     }
   ];
-
   for (let i = 0; i < navAnchorAttrs.length; i++) {
     const navItem = document.createElement('li');
     navItem.classList.add('nav-item');
@@ -91,25 +64,124 @@ export default function createHome() {
     navLinks.append(navItem);
   }
 
-  logoLink.appendChild(logoImg);
-  header.append(logoLink, navLinks);
-  content.appendChild(header);
+  //**** page main content
+  const main = document.createElement('main');
+  const mainContent = document.createElement('div');
+  mainContent.id = 'main-content';
+  main.appendChild(mainContent);
+  
+  const title = document.createElement('h1');
+  title.textContent = 'Pizzeria ';
+  mainContent.append(title);
+
+  const titleSpan = document.createElement('span');
+  titleSpan.id = 'title-span';
+  titleSpan.textContent = 'Michelangiolesca';
+  title.appendChild(titleSpan);
+
+  // restaurant review contents
+  let reviews = [
+    {
+      'class': 'quote',
+      'textContent': '"Roses are red, violets are blue, this pizza is delicious, I hope there\'s leftovers too!"',
+      'author': 'Chef Boyardee'
+    },
+    {
+      'class': 'quote',
+      'textContent': '"When your tummy is very hungry, go to Michelangiolesca for some pizza that\'s extra yummy!"',
+      'author': 'Chef Girlardee'
+    }
+  ]
+  for (let i = 0; i < reviews.length; i++) {
+    const quoteContainer = document.createElement('blockquote');
+
+    let para = document.createElement('p');
+    setReview(para, reviews[i], quoteContainer);
+
+    mainContent.append(quoteContainer);
+  }
+
+  //**** footer contents
+  const footer = document.createElement('footer');
+
+  const mediaContainer = document.createElement('div');
+
+  const anchorAttrs = [
+    {
+      'href': 'https://www.facebook.com/'
+    },
+    {
+      'href': 'https://www.instagram.com/'
+    },
+    {
+      'href': 'https://www.twitter.com/'
+    },
+    {
+      'href': 'https://www.linkedin.com/'
+    }
+  ]
+  const imageAttrs = [
+    {
+      'alt': 'facebook logo',
+      'src': facebookLogo
+    },
+    {
+      'alt': 'instagram logo',
+      'src': instagramLogo
+    },
+      {
+      'alt': 'twitter logo',
+      'src': twitterLogo
+    },
+      {
+      'alt': 'linkedin logo',
+      'src': linkedinLogo
+    },
+  ]
+
+  // add media container and media links
+  for (let i = 0; i < imageAttrs.length; i++) {
+    const mediaLink = document.createElement('a');
+    mediaLink.classList.add('media-link');
+    mediaLink.target = '_blank';
+    setAttributes(mediaLink, anchorAttrs[i]);
+
+    const mediaImg = document.createElement('img');
+    setAttributes(mediaImg, imageAttrs[i]);
+    mediaLink.appendChild(mediaImg);
+
+
+    mediaContainer.append(mediaLink);
+
+  }
+
+  // add credit container and link to github
+
+
+
+  footer.appendChild(mediaContainer);
+
+  content.append(header, main, footer);
 }
 
 
-
-function setAttributes(el, attrs) {
+function setAttributes(elmnt, attrs) {
   for (let key in attrs) {
-    key === 'textContent' ? el.textContent = attrs.textContent : el.setAttribute(key, attrs[key]);
+    key === 'textContent' ? elmnt.textContent = attrs.textContent : elmnt.setAttribute(key, attrs[key]);
   }
 }
 
-// function setAttributes(el, attrs) {
-//   for (let key in attrs) {
-//     if (key === 'textContent') {
-//       el.textContent = attrs.textContent;
-//     } else {
-//       el.setAttribute(key, attrs[key]);
-//     }
-//   }
-// }
+function setReview(elmnt, attrs, elmntContainer) {
+  let cite;
+  for (let key in attrs) {
+    if (key === 'textContent') {
+      elmnt.textContent = attrs.textContent;
+    } else if (key === 'author') {
+      cite = document.createElement('cite');
+      cite.textContent = '-- ' + attrs.author;
+    } else {
+      elmnt.setAttribute(key, attrs[key]);
+    }
+  }
+  elmntContainer.append(elmnt, cite);
+}
