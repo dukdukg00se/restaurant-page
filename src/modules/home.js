@@ -151,6 +151,7 @@ export default function createHome() {
     setAttributes(mediaLink, anchorAttrs[i]);
 
     const mediaImg = document.createElement('img');
+    mediaImg.classList.add('media-img');
     setAttributes(mediaImg, imageAttrs[i]);
     mediaLink.appendChild(mediaImg);
 
