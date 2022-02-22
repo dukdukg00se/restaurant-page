@@ -4,6 +4,9 @@ module.exports = {
   mode: 'development',
 
   entry: './src/index.js',
+  // image url doesn't work when using source-map
+  // https://stackoverflow.com/questions/37288886/webpack-background-images-not-loading
+  // devtool: 'inline-source-map',
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
