@@ -10,6 +10,9 @@ module.exports = {
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
+    // remove dist dir of unused files 
+    // but in this case also removed index.html from dist
+    // clean: true,
   },
   module: {
     rules: [

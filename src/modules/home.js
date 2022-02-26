@@ -6,10 +6,6 @@ import linkedinLogo from '../assets/images/linkedin-logo.svg';
 import githubLogo from '../assets/images/github-logo.svg';
 import githubLogoWhite from '../assets/images/github-logo-white.svg';
 
-// import githubLogo from '../assets/images/svgviewer-output.svg';
-
-// import githubLogo from '../assets/images/svgviewer-test2.svg';
-
 import '../styles/reset.css';
 import '../styles/home.css';
 
@@ -177,27 +173,22 @@ export default function createHome() {
   githubLink.textContent = 'Created by dukdukg00se 2021';
 
   
-
-
   const githubImage = document.createElement('img');
-
   githubImage.src = githubLogo;
   githubImage.alt = '';
   githubImage.id = 'github-logo';
 
-
+  // when using img tag can't manipulate svg tag e.g. change fill attribute
+  // instead change img src for same effect    
   githubLink.addEventListener('mouseenter', function() {
-
     githubImage.src = githubLogoWhite;
-
   });
-
   githubLink.addEventListener('mouseleave', function() {
     githubImage.src = githubLogo;
   });
 
-  githubLink.append(githubImage);
 
+  githubLink.append(githubImage);
   creditContainer.append(githubLink);
 
   footer.append(mediaContainer, creditContainer);
