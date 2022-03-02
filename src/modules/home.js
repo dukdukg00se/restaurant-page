@@ -225,7 +225,7 @@ const createHeader = () => {
 
   const logoLink = document.createElement('a');
   logoLink.id = 'logo-link';
-  logoLink.href = '#content';
+  // logoLink.href = '#content';
 
   const logoImg = document.createElement('img');
   logoImg.id = 'logo-img';
