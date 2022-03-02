@@ -218,62 +218,104 @@ import '../styles/home.css';
 Refactor above createHome function and break into more small, more manageable functions 
 ***************************************************/
 
+// const createHeader = () => {
+//   const content = document.querySelector('#content');
+//   const header = document.createElement('header');
+//   header.id = 'header';
+
+//   const logoLink = document.createElement('a');
+//   logoLink.id = 'logo-link';
+//   // logoLink.href = '#content';
+
+//   const logoImg = document.createElement('img');
+//   logoImg.id = 'logo-img';
+//   logoImg.src = restaurantLogo;
+//   logoImg.alt = 'restaurant logo';
+
+//   const navLinks = document.createElement('ul');
+//   navLinks.classList.add('nav-links');
+
+//   // array of attributes for nav anchor elements
+//   let navAnchorAttrs = [
+//     {
+//       'id': 'story',
+//       'href': '#story',
+//       'textContent': 'Our Story'
+//     },
+//     {
+//       'id': 'menu',
+//       'href': '#menu',
+//       'textContent': 'Menu'
+//     },
+//     {
+//       'id': 'locations',
+//       'href': '#locations',
+//       'textContent': 'Locations & Hours'
+//     },
+//     {
+//       'id': 'contact',
+//       'href': '#contact',
+//       'textContent': 'Contact'
+//     }
+//   ];
+//   for (let i = 0; i < navAnchorAttrs.length; i++) {
+//     const navItem = document.createElement('li');
+//     navItem.classList.add('nav-item');
+
+//     const navAnchor = document.createElement('a');
+//     setAttrs(navAnchor, navAnchorAttrs[i]);
+    
+//     navItem.append(navAnchor);
+//     navLinks.append(navItem);
+//   }
+
+//   logoLink.appendChild(logoImg);
+//   header.append(logoLink, navLinks);
+//   content.appendChild(header);
+// };
+
 const createHeader = () => {
   const content = document.querySelector('#content');
   const header = document.createElement('header');
   header.id = 'header';
 
-  const logoLink = document.createElement('a');
-  logoLink.id = 'logo-link';
-  // logoLink.href = '#content';
+  const logo = document.createElement('img');
+  logo.id = 'logo';
+  logo.src = restaurantLogo;
+  logo.alt = 'restaurant logo';
 
-  const logoImg = document.createElement('img');
-  logoImg.id = 'logo-img';
-  logoImg.src = restaurantLogo;
-  logoImg.alt = 'restaurant logo';
+  const navList = document.createElement('ul');
+  navList.id = 'nav-list';
 
-  const navLinks = document.createElement('ul');
-  navLinks.classList.add('nav-links');
-
-  // array of attributes for nav anchor elements
-  let navAnchorAttrs = [
+  const navItemAttrs = [
     {
-      'id': 'story',
-      'href': '#story',
-      'textContent': 'Our Story'
+      id: 'story',
+      textContent: 'Our Story'
     },
     {
-      'id': 'menu',
-      'href': '#menu',
-      'textContent': 'Menu'
+      id: 'menu',
+      textContent: 'Menu'
     },
     {
-      'id': 'locations',
-      'href': '#locations',
-      'textContent': 'Locations & Hours'
+      id: 'locations-hours',
+      textContent: 'Locations & Hours'
     },
     {
-      'id': 'contact',
-      'href': '#contact',
-      'textContent': 'Contact'
+      id: 'contact',
+      textContent: 'Contact'
     }
   ];
-  for (let i = 0; i < navAnchorAttrs.length; i++) {
+
+  for (let i = 0; i < navItemAttrs.length; i++) {
     const navItem = document.createElement('li');
     navItem.classList.add('nav-item');
-
-    const navAnchor = document.createElement('a');
-    setAttrs(navAnchor, navAnchorAttrs[i]);
-    
-    navItem.append(navAnchor);
-    navLinks.append(navItem);
+    setAttrs(navItem, navItemAttrs[i]);
+    navList.append(navItem);
   }
 
-  logoLink.appendChild(logoImg);
-  header.append(logoLink, navLinks);
-  content.appendChild(header);
-};
-
+  header.append(logo, navList);
+  content.append(header);
+}
 
 const createMain = () => {
   const main = document.createElement('main');  

@@ -9,10 +9,17 @@ displayReviews();
 // displayStory();
 const main = document.querySelector('main');
 
-const pageLinks = document.querySelectorAll('a');
+const home = document.querySelector('#logo');
+home.addEventListener('click', () => {
+  main.removeChild(main.firstElementChild);
+  displayReviews();
+})
 
-pageLinks.forEach((link) => {
-  link.addEventListener('click', (e) => {
+
+const navItems = document.querySelectorAll('li');
+
+navItems.forEach((item) => {
+  item.addEventListener('click', (e) => {
     console.log(e.target.id);
 
     if (e.target.id === 'story') {

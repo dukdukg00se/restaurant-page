@@ -12,7 +12,6 @@ html, body {
 body {
   min-height: 615px;
   font-family: 'Lato', sans-serif;
-
   min-width: 300px;
 }
 
@@ -37,21 +36,27 @@ a {
   min-height: 72px;
   padding: 10px;
 }
-#logo-img {
+
+
+#logo {
   height: auto;
   width: 118px;
   margin-top: 31px;
 }
-#logo-link:hover {
+#logo:hover {
   transform: scale(1.02);
+  cursor: pointer;
 }
-.nav-links {
+#nav-list {
   display: flex;
   gap: 20px;
   letter-spacing: 1.2px;
 }
 .nav-item:last-of-type {
   margin-right: 20px;
+}
+.nav-item:hover {
+  cursor: pointer;
 }
 .nav-item:hover,
 #github-link:hover {
@@ -158,19 +163,19 @@ footer {
     padding: 11px;
     gap: 11px;
   }
-  #logo-link {
+  /* #logo-link {
     height: 84px;
     width: 94px;
-    overflow: hidden; /* hide image overflow */
-  }
-  #logo-img {
+    overflow: hidden;  hide image overflow 
+  } */
+  #logo {
     object-fit: cover; /* crop image but preserve aspect ratio */
     height: 84px;
     width: 118px;
-    object-position: -19px 2px;
+    object-position: -6px -2px;
     margin: 0;
   }
-  .nav-links {
+  #nav-list {
     font-size: 90%;
     width: 100%;
     justify-content: space-evenly;
@@ -209,6 +214,4 @@ footer {
     gap: 11px;
     font-size: 90%;
   }
-
-
 }
