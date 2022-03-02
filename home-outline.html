@@ -8,9 +8,12 @@
 
 
   <!-- need to change -->
-  <link href="../src/styles/reset.css" rel="stylesheet"> 
+  <link href="./src/styles/reset.css" rel="stylesheet"> 
   <!-- need to change -->
-  <link href="../src/styles/home.css" rel="stylesheet"> 
+  <link href="./src/styles/home.css" rel="stylesheet"> 
+
+  <link href="./src/styles/story.css" rel="stylesheet"> 
+
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +25,7 @@
   <div id="content">
 
     <header id="header">
-      <a id="logo-link" href="#content"><img id="logo-img" src="../src/assets/restaurant-logo.png" alt="restaurant logo"></a>
+      <a id="logo-link" href="#content"><img id="logo-img" src="./src/assets/images/restaurant-logo.png" alt="restaurant logo"></a>
 
       <ul class="nav-links">
         <li class="nav-item"><a id="story" href="story">Our Story</a></li>
@@ -34,8 +37,9 @@
     </header>
 
     <main>
-      <div id="main-content">
-        <h1>Pizzeria <span id="title-span">Michelangiolesca</span></h1>
+      <!-- <div id="main-content"> -->
+      <div id="story-container">
+        <!-- <h1>Pizzeria <span id="title-span">Michelangiolesca</span></h1>
         <blockquote>
           <p class="quote">"Roses are red, violets are blue, this pizza is delicious, I hope there's leftovers too!"</p>
           <cite>-- Chef Boyardee</cite>
@@ -43,18 +47,28 @@
         <blockquote>
           <p class="quote">"When your tummy is very hungry, go to Michelangiolesca for some pizza that's extra yummy!"</p>
           <cite>-- Chef Girlardee</cite>
-        </blockquote>
+        </blockquote> -->
+
+        <h1 id="story-heading">Our Story</h1>
+        <p class="story">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Maecenas ultricies mi eget mauris pharetra et ultrices neque ornare. Lorem ipsum dolor sit amet consectetur. Morbi tristique senectus et netus et malesuada fames ac. Sed faucibus turpis in eu mi bibendum neque egestas. Nibh sed pulvinar proin gravida hendrerit lectus a. Tincidunt eget nullam non nisi est sit amet facilisis magna. Pretium aenean pharetra magna ac placerat vestibulum. Ultricies leo integer malesuada nunc vel risus. Nec nam aliquam sem et tortor consequat id porta. Iaculis eu non diam phasellus vestibulum lorem sed risus ultricies. In fermentum posuere urna nec tincidunt praesent semper feugiat. Massa id neque aliquam vestibulum morbi blandit cursus risus. In est ante in nibh. Scelerisque varius morbi enim nunc faucibus a.</p>
+        <p class="story">Nibh sit amet commodo nulla facilisi nullam vehicula ipsum. Amet nisl purus in mollis nunc. Lacus vestibulum sed arcu non odio euismod lacinia at quis. Dignissim diam quis enim lobortis scelerisque fermentum dui. Ipsum a arcu cursus vitae congue mauris rhoncus aenean vel. In nulla posuere sollicitudin aliquam ultrices sagittis. Risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Iaculis urna id volutpat lacus laoreet non curabitur gravida arcu. Sit amet cursus sit amet dictum. Nisl tincidunt eget nullam non nisi est. Donec enim diam vulputate ut pharetra sit amet aliquam. Felis imperdiet proin fermentum leo vel orci porta. At auctor urna nunc id cursus metus. Consectetur lorem donec massa sapien faucibus. Lobortis mattis aliquam faucibus purus. Duis at tellus at urna condimentum.</p>
+
+
+
+        
+
+
+
+
       </div>
     </main>
 
-    <footer>
-
-      
+    <footer>      
       <div id="media-container">
-        <a class="media-link" href="https://www.facebook.com/" target="_blank"><img class="media-img" alt="facebook logo" src="../src/assets/facebook-logo.svg"></a>
-        <a class="media-link" href="https://www.instagram.com/" target="_blank"><img class="media-img" alt="instagram logo" src="../src/assets/instagram-logo.svg"></a>
-        <a class="media-link" href="https://www.twitter.com/" target="_blank"><img class="media-img" alt="twitter logo" src="../src/assets/twitter-logo.svg"></a>
-        <a class="media-link" href="https://www.linkedin.com/" target="_blank"><img class="media-img" alt="linkedin logo" src="../src/assets/linkedin-logo.svg"></a>
+        <a class="media-link" href="https://www.facebook.com/" target="_blank"><img class="media-img" alt="facebook logo" src="./src/assets/images/facebook-logo.svg"></a>
+        <a class="media-link" href="https://www.instagram.com/" target="_blank"><img class="media-img" alt="instagram logo" src="./src/assets/images/instagram-logo.svg"></a>
+        <a class="media-link" href="https://www.twitter.com/" target="_blank"><img class="media-img" alt="twitter logo" src="./src/assets/images/twitter-logo.svg"></a>
+        <a class="media-link" href="https://www.linkedin.com/" target="_blank"><img class="media-img" alt="linkedin logo" src="./src/assets/images/linkedin-logo.svg"></a>
       </div>
 
 
@@ -63,12 +77,8 @@
             <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
           </svg></a>
       </div>
-    </footer>
-
+    </footer>  
   </div>
-
-  
-  <script src="main.js"></script>
 </body>
 
 </html>

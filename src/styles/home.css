@@ -59,7 +59,7 @@ a {
 }
 
 main {
-  flex: 1; /* main content will grow to fit space */
+  flex: 1; /* main content grows to fit space */
   display: flex;
   align-items: center;
   background-color: #1f1f1f; /* fallback color */
@@ -146,10 +146,15 @@ footer {
 
 
 
+
+
+
+
 @media (max-width: 570px) {
   #header {
     flex-direction: column;
-    height: auto; /* contain contens w/o cropping */
+    height: auto; /* contain contents w/o cropping */
+    min-height: auto;
     padding: 11px;
     gap: 11px;
   }
@@ -199,10 +204,10 @@ footer {
   footer {
     flex-direction: column;
     height: auto;
+    min-height: auto;
     padding: 22px 0 15px;
     gap: 11px;
     font-size: 90%;
-
   }
 
 

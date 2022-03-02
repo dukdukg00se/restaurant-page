@@ -1,16 +1,23 @@
-import createHome from './modules/home.js';
+// import createHome from './modules/home.js';
 
+import { createHome } from './modules/home.js';
+import displayReviews from './modules/reviews.js';
+import displayStory from './modules/story.js';
 
-console.log('Testing');
 createHome();
+// displayReviews();
+// displayStory();
 
-// function component() {
-//   const element = document.createElement('div');
-//   element.textContent = 'Hello World';
-//   return element;
-// }
+const pageLinks = document.querySelectorAll('a');
+pageLinks.forEach((link) => {
+  link.addEventListener('click', (e) => {
+    console.log(e.target.id);
 
-// const test = document.getElementById('content');
-// console.log(test);
+    if (e.target.id = 'story') {
+      displayStory();
+    }
+  });
+});
 
-// test.appendChild(component());
+
+
