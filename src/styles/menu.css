@@ -25,6 +25,21 @@
   color: #fff;
 }
 
+.create {
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+}
+
+.toppings-container {
+  display: flex;
+  gap: 2vw;
+}
+
+.toppings {
+  width: 50%;
+}
+
 h2 {
   font-size: 26px;
   color: #ecc756;
@@ -32,6 +47,7 @@ h2 {
 }
 
 h4 {
+  color: #ecc756;
   font-size: 22px;
   font-weight: 700;
 }
