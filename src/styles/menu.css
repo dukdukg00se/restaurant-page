@@ -1,0 +1,24 @@
+#menu-container {
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5vh;
+  width: 90vw;
+  margin: 6vh auto;
+  padding: 5vw;
+  background-color: #000;
+}
+
+#menu-heading {
+  font-size: 65px;
+}
+
+.menu-section {
+  color: #fff;
+}
+
+h2 {
+  font-size: 26px;
+  color: #ecc756;
+}
