@@ -3,6 +3,7 @@
 import { createHome } from './modules/home.js';
 import displayReviews from './modules/reviews.js';
 import displayStory from './modules/story.js';
+import displayMenu from './modules/menu.js';
 
 createHome();
 displayReviews();
@@ -20,17 +21,16 @@ const navItems = document.querySelectorAll('li');
 
 navItems.forEach((item) => {
   item.addEventListener('click', (e) => {
-    console.log(e.target.id);
 
     if (e.target.id === 'story') {
       main.removeChild(main.firstElementChild);
       displayStory();
-      console.log('test1');
+      // console.log('story');
     } else if (e.target.id === 'menu') {
       main.removeChild(main.firstElementChild);
-      displayReviews();
-      console.log('test2');
-    }
+      displayMenu();
+      // console.log('menu');
+    } 
 
   });
 });
