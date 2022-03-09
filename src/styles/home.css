@@ -33,7 +33,7 @@ a {
   background-color: black;
   color: #ecc756;
   height: 10vh;
-  min-height: 72px;
+  /* min-height: 72px; */
   padding: 10px;
 }
 

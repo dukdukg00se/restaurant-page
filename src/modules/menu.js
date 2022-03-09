@@ -5,10 +5,12 @@ const displayMenu = () => {
 
   const menuContainer = document.createElement('div');
   menuContainer.id = 'menu-container';
+  main.append(menuContainer);
 
   const title = document.createElement('h1');
   title.id = 'menu-heading';
   title.textContent = 'Our Menu';
+  menuContainer.append(title);
 
   /************************/
   
@@ -62,48 +64,86 @@ const displayMenu = () => {
     ]
   }
 
-
-
-  menuContainer.append(createMenuSection(fixedMenu, 'menu-section', 'menu-item'));
+  let customMenu = {
+    table: {
+      tr1: ["&nbsp;", '8"', '12"', '16"'],
+      tr2: ["&nbsp;", "4 Pcs", "8 Pcs", "12 Pcs"],
+      tr3: ["Cheese", "$10.25", "$16.25", "$21.25"],
+      tr4: ["Topping", "$1.50", "$2.00", "$3.00"]
+    },
+    toppings: [
+      {
+        name: "Meat Toppings",
+        description:
+          "Pepperoni, Italian Sausage, Anchovies, Bacon, Canadian Bacon, Grilled Chicken Breast, Salami, Meatball"
+      },
+      {
+        name: "Veggie Toppings",
+        description:
+          "Artichoke Hearts, Basil, Green Peppers, Jalapenos, Mushrooms, Black Olives, Red Onion, Pineapple, Sundried Tomato, Roma Tomato, Spinach, Pepperoncini, Fresh Garlic"
+      }
+    ]
+  };
   
-
-
-  menuContainer.insertBefore(title, menuContainer.firstChild);
-  main.append(menuContainer);
+ addMenuSection(fixedMenu, menuContainer);
+  
+  // menuContainer.insertBefore(title, menuContainer.firstChild);
+  // main.append(menuContainer);
 }
 
+function addMenuSection(menu, container) {
+  const sectionsArr = Object.keys(menu)
 
-function createMenuSection(menu, sectionClass, itemClass) {
-  const sectionsArr = Object.keys(menu);
-  // console.log(sections);
-
-  sectionsArr.map(section => {
-    // console.log(section);
-    // console.log(menu[section]);
-
+  sectionsArr.forEach(section => {
     const sectionContainer = document.createElement('div');
-    sectionContainer.classList.add(sectionClass);
+    sectionContainer.classList.add('menu-section');
 
     const sectionHeading = document.createElement('h2');
-    sectionHeading.textContent = section;
+    sectionHeading.textContent = section;  
 
-    // menu[section].map(item => {
-    //   console.log(item.name);
-    //   for (let key in item) {
-    //     console.log(key);
-    //   }
-    // })
+    const sectionBreak = document.createElement('hr');
 
-    sectionContainer.append(sectionHeading);
-    
-    console.log(sectionContainer);
-    
-  })
+    sectionContainer.append(sectionHeading, sectionBreak);
 
-
-
-  return sectionContainer;
+    menu[section].forEach(obj => {
+      addMenuItems(obj, sectionContainer, 'menu-item');
+    })
+  
+    container.append(sectionContainer);
+  });
 }
+
+function addMenuItems(itemObj, container, group) {
+  const itemInfoArr = Object.keys(itemObj);
+  console.log(itemInfoArr);
+  const itemContainer = document.createElement('div');
+  itemContainer.classList.add(group);
+
+  for (let i = 0; i < itemInfoArr.length; i++) {
+    if (itemInfoArr[i] === 'name') {
+      const itemName = document.createElement('h4');
+      itemName.textContent = itemObj[itemInfoArr[i]];
+      itemContainer.append(itemName);
+    } else if (itemInfoArr[i] === 'description') {
+      const itemDescription = document.createElement('p');
+      itemDescription.textContent = itemObj[itemInfoArr[i]];
+      itemContainer.append(itemDescription);
+    } else {
+      const itemPrice = document.createElement('span');
+      itemPrice.textContent = itemObj[itemInfoArr[i]];
+      itemContainer.append(itemPrice);
+    }
+  }
+  container.append(itemContainer);
+}
+
+function addMenuTable(menu, container) {
+  const sectionsArr = Object.keys(menu);
+
+
+}
+
+
 
 export default displayMenu;
 
