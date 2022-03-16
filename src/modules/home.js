@@ -297,7 +297,7 @@ const createHeader = () => {
       textContent: 'Menu'
     },
     {
-      id: 'locations-hours',
+      id: 'location-hours',
       textContent: 'Location & Hours'
     },
     {

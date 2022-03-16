@@ -4,6 +4,7 @@ import { createHome } from './modules/home.js';
 import displayReviews from './modules/reviews.js';
 import displayStory from './modules/story.js';
 import displayMenu from './modules/menu.js';
+import displayLocHrs from './modules/location.js';
 
 createHome();
 displayReviews();
@@ -30,7 +31,11 @@ navItems.forEach((item) => {
       main.removeChild(main.firstElementChild);
       displayMenu();
       // console.log('menu');
-    } 
+    } else if (e.target.id === 'location-hours') {
+      main.removeChild(main.firstElementChild);
+      displayLocHrs();
+    }
+
 
   });
 });
