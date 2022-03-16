@@ -298,7 +298,7 @@ const createHeader = () => {
     },
     {
       id: 'locations-hours',
-      textContent: 'Locations & Hours'
+      textContent: 'Location & Hours'
     },
     {
       id: 'contact',

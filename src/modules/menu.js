@@ -337,61 +337,7 @@ export default displayMenu;
 
 
 
-// let menu = {
-//   'Starters': [
-//     {
-//       name: "Mozarella Sticks",
-//       description: "Served with home made marinara sauce",
-//       price: "$7.99 (6 Pieces) / $13.99 (12 Pieces)"
-//     },
-//     {
-//       name: "Chicken Wings",
-//       description:
-//         "Plain, Mild, Spicy Teriyaki, Bbq, Super Hot Or Honey Buffalo. Served With Ranch",
-//       price: "$12.99 (12 Pieces)"
-//     },
-//     {
-//       name: "Garlic Breadsticks",
-//       description: "Served with home made marinara sauce",
-//       price: "$6.99 (0.5 lb) / $12.99 (1 lb)"
-//     },
-//     {
-//       name: "Potato Wedges",
-//       description: "Served With Ranch",
-//       price: "$6.49"
-//     }
-//   ],
-//   'Specialty Pies': [
-//     {
-//       name: "House Favorite",
-//       description: "Sausage, Green Peppers, Onions And Mushrooms",
-//       price: '8" $13.99 / 12" $19.99 / 16" 24.99'
-//     },
-//     {
-//       name: "The Pig",
-//       description: "Spicy Pepperoni, Soppressata, Italian Sausage",
-//       price: '8" $13.99 / 12" $19.99 / 16" 24.99'
-//     },
-//     {
-//       name: "Funghi",
-//       description: "Roasted Mushroom, Cipollini Onion, Smoked Mozzarella",
-//       price: '8" $12.99 / 12" $18.99 / 16" 23.99'
-//     },
-//     {
-//       name: "Cacio E Pepe",
-//       description: "Pecorino Crema, Mozzarella, Cracked Pepper",
-//       price: '8" $12.99 / 12" $18.99 / 16" 23.99'
-//     }
-//   ],
-//   'Create Your Own': [
-//     {
-//       tr1: ['', '8"', '12"', '16"'],
-//       tr2: ['', '4 Pcs', '8 Pcs', '12 Pcs'],
-//       tr3: ['Cheese', '$10.25', '$16.25', '$21.25'],
-//       tr4: ['Topping', '$1.50', '$2.00', '$3.00']
-//     }
-//   ]
-// };
+
 // function createMenu(obj) {
 //   let menuSections = Object.keys(obj); // Starters, Specialty Pies, Create Your Own  
 
