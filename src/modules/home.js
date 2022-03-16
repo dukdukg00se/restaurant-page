@@ -393,7 +393,7 @@ const createFooter = () => {
   githubImage.alt = '';
   githubImage.id = 'github-logo';
 
-  // wan't to change img bkgrnd color on hover
+  // want to change img bkgrnd color on hover
   // but can't change svg fill attr when using img tag to insert svg
   // change img src for similar effect
   githubLink.addEventListener('mouseenter', function() {
