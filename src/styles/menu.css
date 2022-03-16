@@ -28,7 +28,7 @@
 .create {
   display: flex;
   flex-direction: column;
-  gap: 3vh;
+  text-align: center;
 }
 
 .toppings-container {
@@ -50,6 +50,7 @@ h4 {
   color: #ecc756;
   font-size: 22px;
   font-weight: 700;
+  margin-bottom: 2px;
 }
 
 hr {
