@@ -289,6 +289,10 @@ const createHeader = () => {
 
   const navItemAttrs = [
     {
+      id: 'home',
+      textContent: 'Home'
+    },
+    {
       id: 'story',
       textContent: 'Our Story'
     },
@@ -300,10 +304,6 @@ const createHeader = () => {
       id: 'location-hours',
       textContent: 'Location & Hours'
     },
-    {
-      id: 'contact',
-      textContent: 'Contact'
-    }
   ];
 
   for (let i = 0; i < navItemAttrs.length; i++) {

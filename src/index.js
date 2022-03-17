@@ -23,7 +23,10 @@ const navItems = document.querySelectorAll('li');
 navItems.forEach((item) => {
   item.addEventListener('click', (e) => {
 
-    if (e.target.id === 'story') {
+    if (e.target.id === 'home') {
+      main.removeChild(main.firstElementChild);
+      displayReviews();
+    } else if (e.target.id === 'story') {
       main.removeChild(main.firstElementChild);
       displayStory();
       // console.log('story');
