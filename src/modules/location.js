@@ -43,9 +43,20 @@ const displayLocatn = () => {
     contactContainer.append(anchor)
   }
 
-  
+  const hrsContainer = document.createElement('div');
+  hrsContainer.id = 'hrs-container';
 
-  locationContainer.append(contactContainer);
+  const hrsPara = document.createElement('p');
+  hrsPara.textContent = ' 11:00AM - 8:00PM';
+
+  const dates = document.createElement('strong');
+  dates.textContent = 'Monday - Sunday:';
+
+  hrsPara.insertBefore(dates, hrsPara.firstChild);
+
+  hrsContainer.append(hrsPara);
+
+  locationContainer.append(contactContainer, hrsContainer);
   main.append(locationContainer);
 
 }
