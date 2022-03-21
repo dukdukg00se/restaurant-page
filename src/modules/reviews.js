@@ -13,7 +13,7 @@ const displayReviews = () => {
   titleSpan.textContent = 'Michelangiolesca';
   title.appendChild(titleSpan);
 
-  // restaurant review contents
+
   let reviews = [
     {
       'textContent': '"Roses are red, violets are blue, this pizza is delicious, I hope there\'s leftovers too!"',

@@ -68,23 +68,34 @@ function setAttrs(elmnt, obj) {
       elmnt.textContent = obj[key];
     } else if (key === 'span') {
       const elmntSpan = document.createElement('span');
-      // properties in span obj
-      // console.log(obj[key]);
-      for (let subKey in obj[key]) {
-        console.log(subKey);
-        // console.log(obj.key);
 
-        setAttrs(elmntSpan, obj[key]);
-        
-        elmnt.append(elmntSpan);
+      setAttrs(elmntSpan, obj[key]);
+      elmnt.append(elmntSpan);
 
-      }
     } else {
       elmnt.setAttribute(key, obj[key]);
     }
   }
-
 }
+
+
+// function setAttrs(elmnt, obj) {
+
+//   for (let key in obj) {
+//     switch(key) {
+//       case 'textContent':
+//         elmnt.textContent = obj[key];
+//         break;
+//       case 'span':
+//         const elmntSpan = document.createElement('span');
+//         for (let spanKey in obj[key]) {
+//           setAttrs(elmntSpan, obj[key]);
+
+//         }
+//     }
+//   }
+// }
+
 
 
 
