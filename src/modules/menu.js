@@ -3,14 +3,15 @@ import '../styles/menu.css';
 const displayMenu = () => {
   const main = document.querySelector('main');
 
-  const menuContainer = document.createElement('div');
-  menuContainer.id = 'menu-container';
-  main.append(menuContainer);
+  const mainContent = document.createElement('div');
+  mainContent.classList.add('main-content');
+  mainContent.id = 'menu-container';
+  main.append(mainContent);
 
   const title = document.createElement('h1');
   title.id = 'menu-heading';
   title.textContent = 'Our Menu';
-  menuContainer.append(title);
+  mainContent.append(title);
 
   let menu = [
     {
@@ -113,7 +114,7 @@ const displayMenu = () => {
   ]
 
   menu.forEach(section => {
-    menuContainer.append(addSctn(section));
+    mainContent.append(addSctn(section));
   })
 }
 

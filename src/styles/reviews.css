@@ -2,15 +2,12 @@
   margin-top: -40px;
   gap: 30px;
 }
-
 #reviews-heading {
   font-size: 60px;
 }
-
 #heading-span {
   font-size: 65px;
 }
-
 blockquote {
   display: flex;  
   flex-direction: column;

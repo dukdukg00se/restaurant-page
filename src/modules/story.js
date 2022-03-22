@@ -3,8 +3,9 @@ import '../styles/story.css';
 const displayStory = () => {
   const main = document.querySelector('main');
 
-  const storyContainer = document.createElement('div');
-  storyContainer.id = 'story-container';
+  const mainContent = document.createElement('div');
+  mainContent.classList.add('main-content');
+  mainContent.id = 'story-container';
 
   const heading = document.createElement('h1');
   heading.id = 'story-heading';
@@ -18,8 +19,8 @@ const displayStory = () => {
   paraTwo.classList.add('story');
   paraTwo.textContent = 'Nibh sit amet commodo nulla facilisi nullam vehicula ipsum. Amet nisl purus in mollis nunc. Lacus vestibulum sed arcu non odio euismod lacinia at quis. Dignissim diam quis enim lobortis scelerisque fermentum dui. Ipsum a arcu cursus vitae congue mauris rhoncus aenean vel. In nulla posuere sollicitudin aliquam ultrices sagittis. Risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Iaculis urna id volutpat lacus laoreet non curabitur gravida arcu. Sit amet cursus sit amet dictum. Nisl tincidunt eget nullam non nisi est. Donec enim diam vulputate ut pharetra sit amet aliquam. Felis imperdiet proin fermentum leo vel orci porta. At auctor urna nunc id cursus metus. Consectetur lorem donec massa sapien faucibus. Lobortis mattis aliquam faucibus purus. Duis at tellus at urna condimentum.';
 
-  storyContainer.append(heading, paraOne, paraTwo);
-  main.append(storyContainer);
+  mainContent.append(heading, paraOne, paraTwo);
+  main.append(mainContent);
 }
 
 export default displayStory;

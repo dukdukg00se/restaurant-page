@@ -1,9 +1,9 @@
 #menu-container {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   align-items: center;
   width: 90vw;
-  min-width: 374px;
+  min-width: 374px; */
   margin: 6vh auto;
   background-color: #000;
   word-spacing: 1.1px;
@@ -13,9 +13,9 @@
   gap: 5vh;
 }
 
-#menu-heading {
+/* #menu-heading {
   font-size: 65px;
-}
+} */
 
 .menu-section {
   display: flex;

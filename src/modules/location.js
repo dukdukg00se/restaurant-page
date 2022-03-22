@@ -22,14 +22,15 @@ const anchorAttrs = [
 const displayLocatn = () => {
   const main = document.querySelector('main');
 
-  const locationContainer = document.createElement('div');
-  locationContainer.id = 'lochrs-container';
+  const mainContent = document.createElement('div');
+  mainContent.classList.add('main-content');
+  mainContent.id = 'lochrs-container';
   // main.append(locHrsContainer);
 
   const title = document.createElement('h1');
   title.id = 'lochrs-heading';
   title.textContent = 'Location & Hours';
-  locationContainer.append(title);
+  mainContent.append(title);
 
   const contactContainer = document.createElement('address');
   contactContainer.id = 'location';
@@ -56,8 +57,8 @@ const displayLocatn = () => {
 
   hrsContainer.append(hrsPara);
 
-  locationContainer.append(contactContainer, hrsContainer);
-  main.append(locationContainer);
+  mainContent.append(contactContainer, hrsContainer);
+  main.append(mainContent);
 
 }
 
