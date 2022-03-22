@@ -1,4 +1,4 @@
-// import images 
+// import image and style files
 import restaurantLogo from '../assets/images/restaurant-logo.png'; 
 import facebookLogo from '../assets/images/facebook-logo.svg';
 import instagramLogo from '../assets/images/instagram-logo.svg';
@@ -6,14 +6,13 @@ import twitterLogo from '../assets/images/twitter-logo.svg';
 import linkedinLogo from '../assets/images/linkedin-logo.svg';
 import githubLogo from '../assets/images/github-logo.svg';
 import githubLogoWhite from '../assets/images/github-logo-white.svg';
-
-// import reset and page style files
 import '../styles/reset.css';
 import '../styles/home.css';
 
 // create page header w/ site nav links 
 const createHeader = () => {
   const content = document.querySelector('#content');
+
   const header = document.createElement('header');
   header.id = 'header';
 
@@ -22,7 +21,6 @@ const createHeader = () => {
   logo.src = restaurantLogo;
   logo.alt = 'restaurant logo';
 
-  
   const navList = document.createElement('ul');
   navList.id = 'nav-list';
 
@@ -46,6 +44,7 @@ const createHeader = () => {
     },
   ];
 
+  // create nav items
   for (let i = 0; i < navItemsArr.length; i++) {
     const navItem = document.createElement('li');
     navItem.classList.add('nav-item');
@@ -74,34 +73,34 @@ const createFooter = () => {
 
   const mediaAnchorAttrs = [
     {
-      'href': 'https://www.facebook.com/'
+      href: 'https://www.facebook.com/'
     },
     {
-      'href': 'https://www.instagram.com/'
+      href: 'https://www.instagram.com/'
     },
     {
-      'href': 'https://www.twitter.com/'
+      href: 'https://www.twitter.com/'
     },
     {
-      'href': 'https://www.linkedin.com/'
+      href: 'https://www.linkedin.com/'
     }
   ]
   const mediaImageAttrs = [
     {
-      'alt': 'facebook logo',
-      'src': facebookLogo
+      alt: 'facebook logo',
+      src: facebookLogo
     },
     {
-      'alt': 'instagram logo',
-      'src': instagramLogo
+      alt: 'instagram logo',
+      src: instagramLogo
     },
-      {
-      'alt': 'twitter logo',
-      'src': twitterLogo
+    {
+      alt: 'twitter logo',
+      src: twitterLogo
     },
-      {
-      'alt': 'linkedin logo',
-      'src': linkedinLogo
+    {
+      alt: 'linkedin logo',
+      src: linkedinLogo
     },
   ]
 
