@@ -1,17 +1,21 @@
+import '../styles/reviews.css';
+
 const displayReviews = () => {
   const main = document.querySelector('main');
   
   const mainContent = document.createElement('div');
-  mainContent.id = 'main-content';
+  mainContent.classList.add('main-content');
+  mainContent.id = 'reviews-container';
   
-  const title = document.createElement('h1');
-  title.textContent = 'Pizzeria ';
-  mainContent.append(title);
+  const heading = document.createElement('h1');
+  heading.id = 'reviews-heading';
+  heading.textContent = 'Pizzeria ';
+  mainContent.append(heading);
 
-  const titleSpan = document.createElement('span');
-  titleSpan.id = 'title-span';
-  titleSpan.textContent = 'Michelangiolesca';
-  title.appendChild(titleSpan);
+  const headingSpan = document.createElement('span');
+  headingSpan.id = 'heading-span';
+  headingSpan.textContent = 'Michelangiolesca';
+  heading.appendChild(headingSpan);
 
 
   let reviews = [

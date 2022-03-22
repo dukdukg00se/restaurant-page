@@ -1,25 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Tangerine:wght@400;700&display=swap');
 
-
 * {
   box-sizing: border-box;
 }
 
 html, body {
-  height: 100%; /* root, body, content height set at 100% for flex-grow */
+  height: 100%; /* root, body height set at 100% for flex-grow */
 }
-
 body {
-  min-height: 615px;
   font-family: 'Lato', sans-serif;
   font-size: 18px;
   color: #fff;
+  min-height: 615px;
   min-width: 374px;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
 }
 
 #content {
@@ -34,12 +27,9 @@ a {
   align-items: center;
   background-color: black;
   color: #ecc756;
-  height: 10vh;
-  /* min-height: 72px; */
+  height: 11vh;
   padding: 10px;
 }
-
-
 #logo {
   height: auto;
   width: 118px;
@@ -60,10 +50,12 @@ a {
 .nav-item:hover {
   cursor: pointer;
 }
+
 .nav-item:hover,
 #github-link:hover {
   color: #fff;
 }
+
 
 main {
   flex: 1; /* main content grows to fit space */
@@ -81,41 +73,18 @@ main {
   background-repeat: no-repeat;
   background-position: center;
 }
-#main-content {
+.main-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: 'Tangerine', cursive;
   width: 90vw;
-  margin-top: -40px;
-  gap: 30px;
+  min-width: 374px;
 }
 h1 {
   font-family: 'Tangerine', cursive;
-  font-size: 60px;
+  font-size: 65px;
   font-weight: 700;
   color: #ecc756;
-}
-#title-span {
-  font-size: 65px;
-}
-blockquote {
-  display: flex;  
-  flex-direction: column;
-  gap: 6px;
-  font-family: 'Lato', sans-serif;
-  font-style: italic;
-  font-size: 20px;
-  max-width: 450px;
-  line-height: 1.5;
-}
-.quote {
-  text-align: justify;
-}
-cite {
-  width: 100%;
-  text-align: end;
-  font-size: 18px;
 }
 
 footer {
@@ -150,25 +119,18 @@ footer {
   fill: #fff;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-
-
-
-
-
-@media (max-width: 570px) {
+@media (max-width: 580px) {
   #header {
     flex-direction: column;
     height: auto; /* contain contents w/o cropping */
-    min-height: auto;
     padding: 11px;
     gap: 11px;
   }
-  /* #logo-link {
-    height: 84px;
-    width: 94px;
-    overflow: hidden;  hide image overflow 
-  } */
   #logo {
     object-fit: cover; /* crop image but preserve aspect ratio */
     height: 84px;
@@ -187,24 +149,6 @@ footer {
 
   main {
     display: block;
-  }
-  #main-content {
-    width: 100%;
-    padding: 18px;
-    margin: 7vh 0 0;
-    gap: 3vh;
-  }
-  h1 {
-    font-size: 40px;
-  }
-  #title-span {
-    font-size: 45px;
-  } 
-  blockquote {
-    font-size: 14px;
-  }
-  cite {
-    font-size: 13px;
   }
 
   footer {
