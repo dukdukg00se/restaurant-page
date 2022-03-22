@@ -61,21 +61,6 @@ const displayLocatn = () => {
 
 }
 
-// function setAttrs(elmnt, obj) {
-
-//   for (let key in obj) {
-//     if (key === 'textContent') {
-//       elmnt.textContent = obj[key];
-//     } else if (key === 'span') {
-//       const elmntSpan = document.createElement('span');
-//       setAttrs(elmntSpan, obj[key]);
-//       elmnt.append(elmntSpan);
-//     } else {
-//       elmnt.setAttribute(key, obj[key]);
-//     }
-//   }
-// }
-
 function setAttrs(elmnt, obj) {
   for (let key in obj) {
     switch(key) {
