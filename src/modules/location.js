@@ -24,7 +24,7 @@ const displayLocatn = () => {
 
   const mainContent = document.createElement('div');
   mainContent.classList.add('main-content');
-  mainContent.id = 'lochrs-container';
+  mainContent.id = 'location-container';
   // main.append(locHrsContainer);
 
   const title = document.createElement('h1');

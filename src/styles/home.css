@@ -80,6 +80,12 @@ main {
   width: 90vw;
   min-width: 374px;
 }
+#story-container, #menu-container, #location-container {
+  margin: 6vh auto;
+  background-color: #000;
+  word-spacing: 1.1px;
+  color: #fff;
+}
 h1 {
   font-family: 'Tangerine', cursive;
   font-size: 65px;

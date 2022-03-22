@@ -1,58 +1,36 @@
 #menu-container {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 90vw;
-  min-width: 374px; */
-  margin: 6vh auto;
-  background-color: #000;
-  word-spacing: 1.1px;
-  color: #fff;
-
   padding: 3vw 0;
   gap: 5vh;
 }
-
-/* #menu-heading {
-  font-size: 65px;
-} */
-
 .menu-section {
   display: flex;
   flex-direction: column;
   gap: 3vh;
   width: 75%;
-
 }
-
 .create {
   display: flex;
   flex-direction: column;
   text-align: center;
 }
-
 .toppings-container {
   display: flex;
   gap: 2vw;
 }
-
 .toppings {
   width: 50%;
 }
-
 h2 {
   font-size: 26px;
   color: #ecc756;
   align-self: center;
 }
-
 h4 {
   color: #ecc756;
   font-size: 22px;
   font-weight: 700;
   margin-bottom: 2px;
 }
-
 hr {
   width: 50%;
 }
