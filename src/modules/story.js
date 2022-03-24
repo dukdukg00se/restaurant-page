@@ -1,15 +1,31 @@
 import '../styles/story.css';
 
+const createSubContnr = (parentCls, parentId, headerId, headerTxt) => {
+  const parent = document.createElement('div');
+  parent.classList.add(parentCls);
+  parent.id = parentId;
+
+  const parentHdr = document.createElement('h1');
+  parentHdr.id = headerId;
+  parentHdr.textContent = headerTxt;
+
+  parent.append(parentHdr);
+
+  return parent;
+};
+
 const displayStory = () => {
   const main = document.querySelector('main');
+  main.append(
+    createSubContnr(
+      'main-content',
+      'story-container',
+      'story-heading',
+      'Our Story'
+    )
+  );
 
-  const mainContent = document.createElement('div');
-  mainContent.classList.add('main-content');
-  mainContent.id = 'story-container';
-
-  const heading = document.createElement('h1');
-  heading.id = 'story-heading';
-  heading.textContent = 'Our Story';
+  const subContnr = document.querySelector('#story-container'); 
 
   const paraOne = document.createElement('p');
   paraOne.classList.add('story');
@@ -19,8 +35,8 @@ const displayStory = () => {
   paraTwo.classList.add('story');
   paraTwo.textContent = 'Nibh sit amet commodo nulla facilisi nullam vehicula ipsum. Amet nisl purus in mollis nunc. Lacus vestibulum sed arcu non odio euismod lacinia at quis. Dignissim diam quis enim lobortis scelerisque fermentum dui. Ipsum a arcu cursus vitae congue mauris rhoncus aenean vel. In nulla posuere sollicitudin aliquam ultrices sagittis. Risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Iaculis urna id volutpat lacus laoreet non curabitur gravida arcu. Sit amet cursus sit amet dictum. Nisl tincidunt eget nullam non nisi est. Donec enim diam vulputate ut pharetra sit amet aliquam. Felis imperdiet proin fermentum leo vel orci porta. At auctor urna nunc id cursus metus. Consectetur lorem donec massa sapien faucibus. Lobortis mattis aliquam faucibus purus. Duis at tellus at urna condimentum.';
 
-  mainContent.append(heading, paraOne, paraTwo);
-  main.append(mainContent);
+  subContnr.append(paraOne, paraTwo);
+  main.append(subContnr);
 }
 
 export default displayStory;
