@@ -1,58 +1,72 @@
 import '../styles/reviews.css';
 
+const createContnr = (parentCls, parentId, headerId, headerTxt) => {
+  const parent = document.createElement('div');
+  parent.classList.add(parentCls);
+  parent.id = parentId;
+
+  const parentHdr = document.createElement('h1');
+  parentHdr.id = headerId;
+  parentHdr.textContent = headerTxt;
+
+  parent.append(parentHdr);
+
+  return parent;
+};
+
 const displayReviews = () => {
   const main = document.querySelector('main');
-  
-  const mainContent = document.createElement('div');
-  mainContent.classList.add('main-content');
-  mainContent.id = 'reviews-container';
-  
-  const heading = document.createElement('h1');
-  heading.id = 'reviews-heading';
-  heading.textContent = 'Pizzeria ';
-  mainContent.append(heading);
+  main.append(
+    createContnr(
+      'main-content',
+      'reviews-container',
+      'reviews-heading',
+      'Pizzeria'
+    )
+  );
 
-  const headingSpan = document.createElement('span');
-  headingSpan.id = 'heading-span';
-  headingSpan.textContent = 'Michelangiolesca';
-  heading.appendChild(headingSpan);
+  const subContnr = document.querySelector('#reviews-container'); 
 
+  const heading = document.querySelector('#reviews-heading');
+  
+  const headingSpn = document.createElement('span');
+  headingSpn.id = 'heading-span';
+  headingSpn.textContent = 'Michelangiolesca';
+  heading.append(headingSpn);
 
   let reviews = [
     {
-      'textContent': '"Roses are red, violets are blue, this pizza is delicious, I hope there\'s leftovers too!"',
-      'author': 'Chef Boyardee'
+      textContent: '"Roses are red, violets are blue, this pizza is delicious, I hope there\'s leftovers too!"',
+      author: 'Chef Boyardee'
     },
     {
-      'textContent': '"When your tummy is very hungry, go to Michelangiolesca for some pizza that\'s extra yummy!"',
-      'author': 'Chef Girlardee'
+      textContent: '"When your tummy is very hungry, go to Michelangiolesca for some pizza that\'s extra yummy!"',
+      author: 'Chef Girlardee'
     }
   ]
-  for (let i = 0; i < reviews.length; i++) {
-    const quoteContainer = document.createElement('blockquote');
 
-    let para = document.createElement('p');
-    para.classList.add('quote');
-    setReview(para, reviews[i], quoteContainer);
+  reviews.forEach(review => {
+    const blockqte = document.createElement('blockquote');
 
-    mainContent.appendChild(quoteContainer);
-  }
-  main.appendChild(mainContent);
-}
+    const prgph = document.createElement('p');
+    prgph.classList.add('quote');
 
-function setReview(elmnt, attrs, elmntContainer) {
-  let cite;
-  for (let key in attrs) {
-    if (key === 'textContent') {
-      elmnt.textContent = attrs.textContent;
-    } else if (key === 'author') {
-      cite = document.createElement('cite');
-      cite.textContent = '-- ' + attrs.author;
-    } else {
-      elmnt.setAttribute(key, attrs[key]);
+    blockqte.append(prgph);
+
+    for (let key in review) {
+      if (key === 'textContent') {
+        prgph.textContent = review[key];
+      } 
+      
+      if (key === 'author') {
+        const cite = document.createElement('cite');
+        cite.textContent = '-- ' + review[key];
+        blockqte.append(cite);
+      }
     }
-  }
-  elmntContainer.append(elmnt, cite);
+    subContnr.append(blockqte);
+  })
+  main.appendChild(subContnr);
 }
 
 export default displayReviews;
