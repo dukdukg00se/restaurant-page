@@ -64,13 +64,21 @@ const displayLocatn = () => {
     },
   ];
 
-  for (let i = 0; i < anchorAttrs.length; i++) {
+  anchorAttrs.forEach(anchorObj => {
     const anchor = document.createElement('a');
     anchor.classList.add('contact');
-    setAttrs(anchor, anchorAttrs[i]);
+    setAttrs(anchor, anchorObj);
 
-    contactContnr.append(anchor)
-  }
+    contactContnr.append(anchor);
+  })
+
+  // for (let i = 0; i < anchorAttrs.length; i++) {
+  //   const anchor = document.createElement('a');
+  //   anchor.classList.add('contact');
+  //   setAttrs(anchor, anchorAttrs[i]);
+
+  //   contactContnr.append(anchor)
+  // }
 
   const hoursContnr = document.createElement('div');
   hoursContnr.id = 'hrs-container';
