@@ -1,6 +1,6 @@
 import '../styles/reviews.css';
 
-const createContnr = (parentCls, parentId, headerId, headerTxt) => {
+const createSubContnr = (parentCls, parentId, headerId, headerTxt) => {
   const parent = document.createElement('div');
   parent.classList.add(parentCls);
   parent.id = parentId;
@@ -17,7 +17,7 @@ const createContnr = (parentCls, parentId, headerId, headerTxt) => {
 const displayReviews = () => {
   const main = document.querySelector('main');
   main.append(
-    createContnr(
+    createSubContnr(
       'main-content',
       'reviews-container',
       'reviews-heading',
@@ -66,7 +66,7 @@ const displayReviews = () => {
     }
     subContnr.append(blockqte);
   })
-  main.appendChild(subContnr);
+  main.append(subContnr);
 }
 
 export default displayReviews;
