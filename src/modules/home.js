@@ -41,6 +41,7 @@ const createHeader = () => {
     },
   ];
 
+  // navItemAttrs.forEach(itm => )
 
   for (let i = 0; i < navItemAttrs.length; i++) {
     const navItem = document.createElement('li');
@@ -161,7 +162,7 @@ function setElmnt(elmnt, obj) {
   }
 }
 
-const createSubContnr = (parentCls, parentId, headerId, headerTxt) => {
+const createMnSubContnr = (parentCls, parentId, headerId, headerTxt) => {
   const parent = document.createElement('div');
   parent.classList.add(parentCls);
   parent.id = parentId;
@@ -184,6 +185,6 @@ const createHome = () => {
 
 export {
   createHome,
-  createSubContnr,
+  createMnSubContnr,
   setElmnt
 };

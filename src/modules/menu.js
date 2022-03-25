@@ -1,10 +1,10 @@
-import {createSubContnr} from './home.js';
+import {createMnSubContnr} from './home.js';
 import '../styles/menu.css';
 
 const displayMenu = () => {
   const main = document.querySelector('main');
   main.append(
-    createSubContnr(
+    createMnSubContnr(
       'main-content',
       'menu-container',
       'menu-heading',

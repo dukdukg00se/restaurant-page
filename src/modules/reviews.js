@@ -1,10 +1,10 @@
-import {createSubContnr} from './home.js';
+import {createMnSubContnr} from './home.js';
 import '../styles/reviews.css';
 
 const displayReviews = () => {
   const main = document.querySelector('main');
   main.append(
-    createSubContnr(
+    createMnSubContnr(
       'main-content',
       'reviews-container',
       'reviews-heading',

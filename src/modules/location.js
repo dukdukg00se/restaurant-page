@@ -1,11 +1,11 @@
-import {createSubContnr, setElmnt} from './home.js';
+import {createMnSubContnr, setElmnt} from './home.js';
 
 import '../styles/location.css';
 
 const displayLocatn = () => {
   const main = document.querySelector('main');
   main.append(
-    createSubContnr(
+    createMnSubContnr(
       'main-content',
       'location-container',
       'location-heading',

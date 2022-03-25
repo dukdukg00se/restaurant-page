@@ -1,10 +1,10 @@
-import {createSubContnr} from './home.js';
+import {createMnSubContnr} from './home.js';
 import '../styles/story.css';
 
 const displayStory = () => {
   const main = document.querySelector('main');
   main.append(
-    createSubContnr(
+    createMnSubContnr(
       'main-content',
       'story-container',
       'story-heading',
