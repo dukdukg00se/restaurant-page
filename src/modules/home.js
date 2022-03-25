@@ -40,15 +40,12 @@ const createHeader = () => {
       textContent: 'Location & Hours'
     },
   ];
-
-  // navItemAttrs.forEach(itm => )
-
-  for (let i = 0; i < navItemAttrs.length; i++) {
+  navItemAttrs.forEach(itm => {
     const navItem = document.createElement('li');
     navItem.classList.add('nav-item');
-    setElmnt(navItem, navItemAttrs[i]);
+    setElmnt(navItem, itm);
     navList.append(navItem);
-  }
+  })
 
   header.append(logo, navList);
   content.append(header);
