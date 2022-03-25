@@ -1,35 +1,6 @@
+import {createSubContnr, setElmnt} from './home.js';
+
 import '../styles/location.css';
-
-const createSubContnr = (parentCls, parentId, headerId, headerTxt) => {
-  const parent = document.createElement('div');
-  parent.classList.add(parentCls);
-  parent.id = parentId;
-
-  const parentHdr = document.createElement('h1');
-  parentHdr.id = headerId;
-  parentHdr.textContent = headerTxt;
-
-  parent.append(parentHdr);
-
-  return parent;
-};
-
-function setAttrs(elmnt, obj) {
-  for (let key in obj) {
-    switch(key) {
-      case 'textContent':
-        elmnt.textContent = obj[key];
-        break;
-      case 'span':
-        const elmntSpan = document.createElement('span');
-        setAttrs(elmntSpan, obj[key]);
-        elmnt.append(elmntSpan);
-        break;
-      default:
-        elmnt.setAttribute(key, obj[key]);
-    }
-  }
-}
 
 const displayLocatn = () => {
   const main = document.querySelector('main');
@@ -63,11 +34,10 @@ const displayLocatn = () => {
       textContent: 'info@michelangiolesca.com'
     },
   ];
-
   anchorAttrs.forEach(anchorObj => {
     const anchor = document.createElement('a');
     anchor.classList.add('contact');
-    setAttrs(anchor, anchorObj);
+    setElmnt(anchor, anchorObj);
 
     contactContnr.append(anchor);
   })
@@ -78,10 +48,10 @@ const displayLocatn = () => {
   const hoursPrgph = document.createElement('p');
   hoursPrgph.textContent = ' 11:00AM - 8:00PM';
 
-  const dates = document.createElement('strong');
-  dates.textContent = 'Monday - Sunday:';
+  const days = document.createElement('strong');
+  days.textContent = 'Monday - Sunday:';
 
-  hoursPrgph.insertBefore(dates, hoursPrgph.firstChild);
+  hoursPrgph.insertBefore(days, hoursPrgph.firstChild);
 
   hoursContnr.append(hoursPrgph);
 

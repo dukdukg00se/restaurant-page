@@ -8,7 +8,6 @@ import githubLogoWhite from '../assets/images/github-logo-white.svg';
 import '../styles/reset.css';
 import '../styles/home.css';
 
-// Function initializes page header contents
 const createHeader = () => {
   const content = document.querySelector('#content');
 
@@ -42,11 +41,11 @@ const createHeader = () => {
     },
   ];
 
-  // create nav items
+
   for (let i = 0; i < navItemAttrs.length; i++) {
     const navItem = document.createElement('li');
     navItem.classList.add('nav-item');
-    setAttrs(navItem, navItemAttrs[i]);
+    setElmnt(navItem, navItemAttrs[i]);
     navList.append(navItem);
   }
 
@@ -65,7 +64,6 @@ const createFooter = () => {
   const content = document.querySelector('#content');
   const footer = document.createElement('footer');
 
-    // add media container and media links
   const mediaContainer = document.createElement('div');
   mediaContainer.id = 'media-container';
 
@@ -106,17 +104,17 @@ const createFooter = () => {
     const mediaLink = document.createElement('a');
     mediaLink.classList.add('media-link');
     mediaLink.target = '_blank';
-    setAttrs(mediaLink, anchorAttrs[i]);
+    setElmnt(mediaLink, anchorAttrs[i]);
 
     const mediaImg = document.createElement('img');
     mediaImg.classList.add('media-img');
-    setAttrs(mediaImg, imageAttrs[i]);
+    setElmnt(mediaImg, imageAttrs[i]);
 
     mediaLink.appendChild(mediaImg);
     mediaContainer.appendChild(mediaLink);
   }
 
-  // add credit container and link to github
+
   const creditContainer = document.createElement('div');
   creditContainer.id = 'credits';
 
@@ -146,7 +144,7 @@ const createFooter = () => {
   content.appendChild(footer);
 };
 
-function setAttrs(elmnt, obj) {
+function setElmnt(elmnt, obj) {
   for (let key in obj) {
     switch(key) {
       case 'textContent':
@@ -154,7 +152,7 @@ function setAttrs(elmnt, obj) {
         break;
       case 'span':
         const elmntSpan = document.createElement('span');
-        setAttrs(elmntSpan, obj[key]);
+        setElmnt(elmntSpan, obj[key]);
         elmnt.append(elmntSpan);
         break;
       default:
@@ -163,11 +161,19 @@ function setAttrs(elmnt, obj) {
   }
 }
 
-// function setAttrs(elmnt, attrs) {
-//   for (let key in attrs) {
-//     key === 'textContent' ? elmnt.textContent = attrs.textContent : elmnt.setAttribute(key, attrs[key]);
-//   }
-// }
+const createSubContnr = (parentCls, parentId, headerId, headerTxt) => {
+  const parent = document.createElement('div');
+  parent.classList.add(parentCls);
+  parent.id = parentId;
+
+  const parentHdr = document.createElement('h1');
+  parentHdr.id = headerId;
+  parentHdr.textContent = headerTxt;
+
+  parent.append(parentHdr);
+
+  return parent;
+};
 
 
 const createHome = () => {
@@ -176,4 +182,8 @@ const createHome = () => {
   createFooter();
 }
 
-export default createHome;
+export {
+  createHome,
+  createSubContnr,
+  setElmnt
+};

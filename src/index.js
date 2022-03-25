@@ -1,11 +1,14 @@
-import createHome from './modules/home.js';
+import {createHome} from './modules/home.js';
 import displayReviews from './modules/reviews.js';
 import displayStory from './modules/story.js';
 import displayMenu from './modules/menu.js';
 import displayLocatn from './modules/location.js';
 
+
 createHome();
 displayReviews();
+
+
 
 const main = document.querySelector('main');
 

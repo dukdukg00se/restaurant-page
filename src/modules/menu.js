@@ -1,18 +1,5 @@
+import {createSubContnr} from './home.js';
 import '../styles/menu.css';
-
-const createSubContnr = (parentCls, parentId, headerId, headerTxt) => {
-  const parent = document.createElement('div');
-  parent.classList.add(parentCls);
-  parent.id = parentId;
-
-  const parentHdr = document.createElement('h1');
-  parentHdr.id = headerId;
-  parentHdr.textContent = headerTxt;
-
-  parent.append(parentHdr);
-
-  return parent;
-};
 
 const displayMenu = () => {
   const main = document.querySelector('main');
@@ -124,9 +111,7 @@ const displayMenu = () => {
       ]
     }
   ]
-
   const subContnr = document.querySelector('#menu-container');
-
   menu.forEach(section => {
     subContnr.append(addSctn(section));
   });

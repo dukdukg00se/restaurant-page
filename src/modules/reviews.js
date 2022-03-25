@@ -1,18 +1,5 @@
+import {createSubContnr} from './home.js';
 import '../styles/reviews.css';
-
-const createSubContnr = (parentCls, parentId, headerId, headerTxt) => {
-  const parent = document.createElement('div');
-  parent.classList.add(parentCls);
-  parent.id = parentId;
-
-  const parentHdr = document.createElement('h1');
-  parentHdr.id = headerId;
-  parentHdr.textContent = headerTxt;
-
-  parent.append(parentHdr);
-
-  return parent;
-};
 
 const displayReviews = () => {
   const main = document.querySelector('main');
@@ -24,8 +11,6 @@ const displayReviews = () => {
       'Pizzeria'
     )
   );
-
-  const subContnr = document.querySelector('#reviews-container'); 
 
   const heading = document.querySelector('#reviews-heading');
   
@@ -44,7 +29,7 @@ const displayReviews = () => {
       author: 'Chef Girlardee'
     }
   ]
-
+  const subContnr = document.querySelector('#reviews-container'); 
   reviews.forEach(review => {
     const blockqte = document.createElement('blockquote');
 
