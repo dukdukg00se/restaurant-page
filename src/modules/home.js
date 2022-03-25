@@ -1,4 +1,3 @@
-// import image and style files
 import restaurantLogo from '../assets/images/restaurant-logo.png'; 
 import facebookLogo from '../assets/images/facebook-logo.svg';
 import instagramLogo from '../assets/images/instagram-logo.svg';
@@ -9,7 +8,7 @@ import githubLogoWhite from '../assets/images/github-logo-white.svg';
 import '../styles/reset.css';
 import '../styles/home.css';
 
-// create page header w/ site nav links 
+// Function initializes page header contents
 const createHeader = () => {
   const content = document.querySelector('#content');
 
@@ -24,8 +23,7 @@ const createHeader = () => {
   const navList = document.createElement('ul');
   navList.id = 'nav-list';
 
-  // array w/ nav item attributes and content
-  const navItemsArr = [
+  const navItemAttrs = [
     {
       id: 'home',
       textContent: 'Home'
@@ -45,10 +43,10 @@ const createHeader = () => {
   ];
 
   // create nav items
-  for (let i = 0; i < navItemsArr.length; i++) {
+  for (let i = 0; i < navItemAttrs.length; i++) {
     const navItem = document.createElement('li');
     navItem.classList.add('nav-item');
-    setAttrs(navItem, navItemsArr[i]);
+    setAttrs(navItem, navItemAttrs[i]);
     navList.append(navItem);
   }
 
@@ -148,12 +146,28 @@ const createFooter = () => {
   content.appendChild(footer);
 };
 
-
-function setAttrs(elmnt, attrs) {
-  for (let key in attrs) {
-    key === 'textContent' ? elmnt.textContent = attrs.textContent : elmnt.setAttribute(key, attrs[key]);
+function setAttrs(elmnt, obj) {
+  for (let key in obj) {
+    switch(key) {
+      case 'textContent':
+        elmnt.textContent = obj[key];
+        break;
+      case 'span':
+        const elmntSpan = document.createElement('span');
+        setAttrs(elmntSpan, obj[key]);
+        elmnt.append(elmntSpan);
+        break;
+      default:
+        elmnt.setAttribute(key, obj[key]);
+    }
   }
 }
+
+// function setAttrs(elmnt, attrs) {
+//   for (let key in attrs) {
+//     key === 'textContent' ? elmnt.textContent = attrs.textContent : elmnt.setAttribute(key, attrs[key]);
+//   }
+// }
 
 
 const createHome = () => {
