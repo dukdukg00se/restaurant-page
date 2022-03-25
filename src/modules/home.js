@@ -69,7 +69,7 @@ const createFooter = () => {
   const mediaContainer = document.createElement('div');
   mediaContainer.id = 'media-container';
 
-  const mediaAnchorAttrs = [
+  const anchorAttrs = [
     {
       href: 'https://www.facebook.com/'
     },
@@ -83,7 +83,7 @@ const createFooter = () => {
       href: 'https://www.linkedin.com/'
     }
   ]
-  const mediaImageAttrs = [
+  const imageAttrs = [
     {
       alt: 'facebook logo',
       src: facebookLogo
@@ -102,15 +102,15 @@ const createFooter = () => {
     },
   ]
 
-  for (let i = 0; i < mediaImageAttrs.length; i++) {
+  for (let i = 0; i < imageAttrs.length; i++) {
     const mediaLink = document.createElement('a');
     mediaLink.classList.add('media-link');
     mediaLink.target = '_blank';
-    setAttrs(mediaLink, mediaAnchorAttrs[i]);
+    setAttrs(mediaLink, anchorAttrs[i]);
 
     const mediaImg = document.createElement('img');
     mediaImg.classList.add('media-img');
-    setAttrs(mediaImg, mediaImageAttrs[i]);
+    setAttrs(mediaImg, imageAttrs[i]);
 
     mediaLink.appendChild(mediaImg);
     mediaContainer.appendChild(mediaLink);
