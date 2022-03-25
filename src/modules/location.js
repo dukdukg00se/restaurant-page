@@ -1,66 +1,18 @@
 import '../styles/location.css';
 
-const anchorAttrs = [
-  {
-    href: 'https://goo.gl/maps/WLfnuS4vb1fdn7eM6',
-    textContent: '1420 Baker Street, Suite B, ',
-    span: {
-      id: 'city-span',
-      textContent: 'Costa Mesa, CA 92626'
-    }
-  },
-  {
-    href: 'tel:714-708-2143',
-    textContent: '714.708.2143'
-  },
-  {
-    href: 'mailto:info@michelangiolesca.com',
-    textContent: 'info@michelangiolesca.com'
-  },
-];
+const createSubContnr = (parentCls, parentId, headerId, headerTxt) => {
+  const parent = document.createElement('div');
+  parent.classList.add(parentCls);
+  parent.id = parentId;
 
-const displayLocatn = () => {
-  const main = document.querySelector('main');
+  const parentHdr = document.createElement('h1');
+  parentHdr.id = headerId;
+  parentHdr.textContent = headerTxt;
 
-  const mainContent = document.createElement('div');
-  mainContent.classList.add('main-content');
-  mainContent.id = 'location-container';
-  // main.append(locHrsContainer);
+  parent.append(parentHdr);
 
-  const title = document.createElement('h1');
-  title.id = 'lochrs-heading';
-  title.textContent = 'Location & Hours';
-  mainContent.append(title);
-
-  const contactContainer = document.createElement('address');
-  contactContainer.id = 'location';
-
-
-  for (let i = 0; i < anchorAttrs.length; i++) {
-    const anchor = document.createElement('a');
-    anchor.classList.add('contact');
-    setAttrs(anchor, anchorAttrs[i]);
-
-    contactContainer.append(anchor)
-  }
-
-  const hrsContainer = document.createElement('div');
-  hrsContainer.id = 'hrs-container';
-
-  const hrsPara = document.createElement('p');
-  hrsPara.textContent = ' 11:00AM - 8:00PM';
-
-  const dates = document.createElement('strong');
-  dates.textContent = 'Monday - Sunday:';
-
-  hrsPara.insertBefore(dates, hrsPara.firstChild);
-
-  hrsContainer.append(hrsPara);
-
-  mainContent.append(contactContainer, hrsContainer);
-  main.append(mainContent);
-
-}
+  return parent;
+};
 
 function setAttrs(elmnt, obj) {
   for (let key in obj) {
@@ -77,6 +29,65 @@ function setAttrs(elmnt, obj) {
         elmnt.setAttribute(key, obj[key]);
     }
   }
+}
+
+const displayLocatn = () => {
+  const main = document.querySelector('main');
+  main.append(
+    createSubContnr(
+      'main-content',
+      'location-container',
+      'location-heading',
+      'Location & Hours'
+    )
+  );
+
+  const contactContnr = document.createElement('address');
+  contactContnr.id = 'location';
+
+  const anchorAttrs = [
+    {
+      href: 'https://goo.gl/maps/WLfnuS4vb1fdn7eM6',
+      textContent: '1420 Baker Street, Suite B, ',
+      span: {
+        id: 'city-span',
+        textContent: 'Costa Mesa, CA 92626'
+      }
+    },
+    {
+      href: 'tel:714-708-2143',
+      textContent: '714.708.2143'
+    },
+    {
+      href: 'mailto:info@michelangiolesca.com',
+      textContent: 'info@michelangiolesca.com'
+    },
+  ];
+
+  for (let i = 0; i < anchorAttrs.length; i++) {
+    const anchor = document.createElement('a');
+    anchor.classList.add('contact');
+    setAttrs(anchor, anchorAttrs[i]);
+
+    contactContnr.append(anchor)
+  }
+
+  const hoursContnr = document.createElement('div');
+  hoursContnr.id = 'hrs-container';
+
+  const hoursPrgph = document.createElement('p');
+  hoursPrgph.textContent = ' 11:00AM - 8:00PM';
+
+  const dates = document.createElement('strong');
+  dates.textContent = 'Monday - Sunday:';
+
+  hoursPrgph.insertBefore(dates, hoursPrgph.firstChild);
+
+  hoursContnr.append(hoursPrgph);
+
+  const subContnr = document.querySelector('#location-container');
+  subContnr.append(contactContnr, hoursContnr);
+  main.append(subContnr);
 }
 
 export default displayLocatn;
