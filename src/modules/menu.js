@@ -1,17 +1,29 @@
 import '../styles/menu.css';
 
+const createSubContnr = (parentCls, parentId, headerId, headerTxt) => {
+  const parent = document.createElement('div');
+  parent.classList.add(parentCls);
+  parent.id = parentId;
+
+  const parentHdr = document.createElement('h1');
+  parentHdr.id = headerId;
+  parentHdr.textContent = headerTxt;
+
+  parent.append(parentHdr);
+
+  return parent;
+};
+
 const displayMenu = () => {
   const main = document.querySelector('main');
-
-  const mainContent = document.createElement('div');
-  mainContent.classList.add('main-content');
-  mainContent.id = 'menu-container';
-  main.append(mainContent);
-
-  const title = document.createElement('h1');
-  title.id = 'menu-heading';
-  title.textContent = 'Our Menu';
-  mainContent.append(title);
+  main.append(
+    createSubContnr(
+      'main-content',
+      'menu-container',
+      'menu-heading',
+      'Our Menu'
+    )
+  );
 
   let menu = [
     {
@@ -113,9 +125,11 @@ const displayMenu = () => {
     }
   ]
 
+  const subContnr = document.querySelector('#menu-container');
+
   menu.forEach(section => {
-    mainContent.append(addSctn(section));
-  })
+    subContnr.append(addSctn(section));
+  });
 }
 
 function addSctn(obj) {
