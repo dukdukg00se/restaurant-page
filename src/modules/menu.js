@@ -1,6 +1,224 @@
 import {createMnSubContnr} from './home.js';
 import '../styles/menu.css';
 
+// Constructor to create new menu sections
+function Section(sctn, type, itms, adndm) {
+  this.section = sctn;
+  this.type = type;
+  this.items = itms;
+  this.addendum = adndm;
+}
+
+Section.prototype.classTitle = 'menu-section';
+
+// Array to hold different menu sections
+let menu = [];
+
+
+let starters = new Section(
+  'Starters', 
+  'descriptive', 
+  [
+    {
+      name: "Mozzarella Sticks",
+      classTitle: 'menu-item',
+      description: "Served with homemade marinara sauce",
+      price: "$7.99 (6 Pieces) / $13.99 (12 Pieces)"
+    },
+    {
+      name: "Chicken Wings",
+      classTitle: 'menu-item',
+      description:
+        "Plain, Mild, Spicy Teriyaki, BBQ, Super-Hot or Honey Buffalo. Served With Ranch",
+      price: "$12.99 (12 Pieces)"
+    },
+    {
+      name: "Garlic Breadsticks",
+      classTitle: 'menu-item',
+      description: "Served with homemade marinara sauce",
+      price: "$6.99 (0.5 lb.) / $12.99 (1 lb.)"
+    },
+    {
+      name: "Potato Wedges",
+      classTitle: 'menu-item',
+      description: "Served with Ranch",
+      price: "$6.49"
+    }
+  ], 
+  []
+);
+
+let specials = new Section(
+  'Specialty Pies', 
+  'descriptive',
+  [
+    {
+      name: "House Favorite",
+      classTitle: 'menu-item',
+      description: "Sausage, Green Peppers, Onions And Mushrooms",
+      price: '8" $13.99 / 12" $19.99 / 16" 24.99'
+    },
+    {
+      name: "The Pig",
+      classTitle: 'menu-item',
+      description: "Spicy Pepperoni, Soppressata, Italian Sausage",
+      price: '8" $13.99 / 12" $19.99 / 16" 24.99'
+    },
+    {
+      name: "Funghi",
+      classTitle: 'menu-item',
+      description: "Roasted Mushroom, Cipollini Onion, Smoked Mozzarella",
+      price: '8" $12.99 / 12" $18.99 / 16" 23.99'
+    },
+    {
+      name: "Cacio E Pepe",
+      classTitle: 'menu-item',
+      description: "Pecorino Crema, Mozzarella, Cracked Pepper",
+      price: '8" $12.99 / 12" $18.99 / 16" 23.99'
+    }
+  ],
+  []
+) 
+
+let create = new Section(
+  'Create Your Own', 
+  'table',
+  [
+    {
+      classTitle: 'create',
+      tr1: ["", '8"', '12"', '16"'],
+      tr2: ["", "4 Pcs", "8 Pcs", "12 Pcs"],
+      tr3: ["Cheese", "$10.25", "$16.25", "$21.25"],
+      tr4: ["Topping", "$1.50", "$2.00", "$3.00"]
+    }
+  ],
+  [
+    {
+      classTitle: 'toppings-container',
+      type: 'descriptive',
+      items: [
+        {
+          name: 'Meat Toppings',
+          classTitle: 'toppings',
+          description: "Pepperoni, Italian Sausage, Anchovies, Bacon, Canadian Bacon, Grilled Chicken Breast, Salami, Meatball",
+        },
+        {
+          name: 'Veggie Toppings',
+          classTitle: 'toppings',
+          description: 'Artichoke Hearts, Basil, Green Peppers, Jalapenos, Mushrooms, Black Olives, Red Onion, Pineapple, Sundried Tomato, Roma Tomato, Spinach, Pepperoncini, Fresh Garlic',
+        }
+      ]
+    }
+  ]
+)
+
+menu.push(starters, specials, create);
+
+/** 
+* Practice using object constructors 
+* Replace hardcoded menu array with one using the Section constructor
+*/
+// let menu = [
+//   {
+//     section: 'Starters',
+//     classTitle: 'menu-section',
+//     type: 'descriptive',
+//     items: [
+//       {
+//         name: "Mozzarella Sticks",
+//         classTitle: 'menu-item',
+//         description: "Served with homemade marinara sauce",
+//         price: "$7.99 (6 Pieces) / $13.99 (12 Pieces)"
+//       },
+//       {
+//         name: "Chicken Wings",
+//         classTitle: 'menu-item',
+//         description:
+//           "Plain, Mild, Spicy Teriyaki, BBQ, Super-Hot or Honey Buffalo. Served With Ranch",
+//         price: "$12.99 (12 Pieces)"
+//       },
+//       {
+//         name: "Garlic Breadsticks",
+//         classTitle: 'menu-item',
+//         description: "Served with homemade marinara sauce",
+//         price: "$6.99 (0.5 lb.) / $12.99 (1 lb.)"
+//       },
+//       {
+//         name: "Potato Wedges",
+//         classTitle: 'menu-item',
+//         description: "Served with Ranch",
+//         price: "$6.49"
+//       }
+//     ],
+//     addendum: []
+//   },
+//   {
+//     section: 'Specialty Pies',
+//     classTitle: 'menu-section',
+//     type: 'descriptive',
+//     items: [
+//       {
+//         name: "House Favorite",
+//         classTitle: 'menu-item',
+//         description: "Sausage, Green Peppers, Onions And Mushrooms",
+//         price: '8" $13.99 / 12" $19.99 / 16" 24.99'
+//       },
+//       {
+//         name: "The Pig",
+//         classTitle: 'menu-item',
+//         description: "Spicy Pepperoni, Soppressata, Italian Sausage",
+//         price: '8" $13.99 / 12" $19.99 / 16" 24.99'
+//       },
+//       {
+//         name: "Funghi",
+//         classTitle: 'menu-item',
+//         description: "Roasted Mushroom, Cipollini Onion, Smoked Mozzarella",
+//         price: '8" $12.99 / 12" $18.99 / 16" 23.99'
+//       },
+//       {
+//         name: "Cacio E Pepe",
+//         classTitle: 'menu-item',
+//         description: "Pecorino Crema, Mozzarella, Cracked Pepper",
+//         price: '8" $12.99 / 12" $18.99 / 16" 23.99'
+//       }
+//     ], 
+//     addendum: []
+//   },
+//   {
+//     section: 'Create Your Own',
+//     classTitle: 'menu-section',
+//     type: 'table',
+//     items: [
+//       {
+//         classTitle: 'create',
+//         tr1: ["", '8"', '12"', '16"'],
+//         tr2: ["", "4 Pcs", "8 Pcs", "12 Pcs"],
+//         tr3: ["Cheese", "$10.25", "$16.25", "$21.25"],
+//         tr4: ["Topping", "$1.50", "$2.00", "$3.00"]
+//       }
+//     ],
+//     addendum: [
+//       {
+//         classTitle: 'toppings-container',
+//         type: 'descriptive',
+//         items: [
+//           {
+//             name: 'Meat Toppings',
+//             classTitle: 'toppings',
+//             description: "Pepperoni, Italian Sausage, Anchovies, Bacon, Canadian Bacon, Grilled Chicken Breast, Salami, Meatball",
+//           },
+//           {
+//             name: 'Veggie Toppings',
+//             classTitle: 'toppings',
+//             description: 'Artichoke Hearts, Basil, Green Peppers, Jalapenos, Mushrooms, Black Olives, Red Onion, Pineapple, Sundried Tomato, Roma Tomato, Spinach, Pepperoncini, Fresh Garlic',
+//           }
+//         ]
+//       }
+//     ]
+//   }
+// ]
+
+
 const displayMenu = () => {
   const main = document.querySelector('main');
   main.append(
@@ -12,110 +230,13 @@ const displayMenu = () => {
     )
   );
 
-  let menu = [
-    {
-      section: 'Starters',
-      classTitle: 'menu-section',
-      type: 'descriptive',
-      items: [
-        {
-          name: "Mozzarella Sticks",
-          classTitle: 'menu-item',
-          description: "Served with homemade marinara sauce",
-          price: "$7.99 (6 Pieces) / $13.99 (12 Pieces)"
-        },
-        {
-          name: "Chicken Wings",
-          classTitle: 'menu-item',
-          description:
-            "Plain, Mild, Spicy Teriyaki, BBQ, Super-Hot or Honey Buffalo. Served With Ranch",
-          price: "$12.99 (12 Pieces)"
-        },
-        {
-          name: "Garlic Breadsticks",
-          classTitle: 'menu-item',
-          description: "Served with homemade marinara sauce",
-          price: "$6.99 (0.5 lb.) / $12.99 (1 lb.)"
-        },
-        {
-          name: "Potato Wedges",
-          classTitle: 'menu-item',
-          description: "Served with Ranch",
-          price: "$6.49"
-        }
-      ],
-      addendum: []
-    },
-    {
-      section: 'Specialty Pies',
-      classTitle: 'menu-section',
-      type: 'descriptive',
-      items: [
-        {
-          name: "House Favorite",
-          classTitle: 'menu-item',
-          description: "Sausage, Green Peppers, Onions And Mushrooms",
-          price: '8" $13.99 / 12" $19.99 / 16" 24.99'
-        },
-        {
-          name: "The Pig",
-          classTitle: 'menu-item',
-          description: "Spicy Pepperoni, Soppressata, Italian Sausage",
-          price: '8" $13.99 / 12" $19.99 / 16" 24.99'
-        },
-        {
-          name: "Funghi",
-          classTitle: 'menu-item',
-          description: "Roasted Mushroom, Cipollini Onion, Smoked Mozzarella",
-          price: '8" $12.99 / 12" $18.99 / 16" 23.99'
-        },
-        {
-          name: "Cacio E Pepe",
-          classTitle: 'menu-item',
-          description: "Pecorino Crema, Mozzarella, Cracked Pepper",
-          price: '8" $12.99 / 12" $18.99 / 16" 23.99'
-        }
-      ], 
-      addendum: []
-    },
-    {
-      section: 'Create Your Own',
-      classTitle: 'menu-section',
-      type: 'table',
-      items: [
-        {
-          classTitle: 'create',
-          tr1: ["", '8"', '12"', '16"'],
-          tr2: ["", "4 Pcs", "8 Pcs", "12 Pcs"],
-          tr3: ["Cheese", "$10.25", "$16.25", "$21.25"],
-          tr4: ["Topping", "$1.50", "$2.00", "$3.00"]
-        }
-      ],
-      addendum: [
-        {
-          classTitle: 'toppings-container',
-          type: 'descriptive',
-          items: [
-            {
-              name: 'Meat Toppings',
-              classTitle: 'toppings',
-              description: "Pepperoni, Italian Sausage, Anchovies, Bacon, Canadian Bacon, Grilled Chicken Breast, Salami, Meatball",
-            },
-            {
-              name: 'Veggie Toppings',
-              classTitle: 'toppings',
-              description: 'Artichoke Hearts, Basil, Green Peppers, Jalapenos, Mushrooms, Black Olives, Red Onion, Pineapple, Sundried Tomato, Roma Tomato, Spinach, Pepperoncini, Fresh Garlic',
-            }
-          ]
-        }
-      ]
-    }
-  ]
   const subContnr = document.querySelector('#menu-container');
+
   menu.forEach(section => {
     subContnr.append(createSctn(section));
   });
 }
+
 
 function createSctn(obj) {
   const sectionContnr = document.createElement('div');
