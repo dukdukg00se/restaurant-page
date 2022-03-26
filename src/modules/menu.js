@@ -113,78 +113,79 @@ const displayMenu = () => {
   ]
   const subContnr = document.querySelector('#menu-container');
   menu.forEach(section => {
-    subContnr.append(addSctn(section));
+    subContnr.append(createSctn(section));
   });
 }
 
-function addSctn(obj) {
-  const sctnContainer = document.createElement('div');
-  sctnContainer.classList.add(obj.classTitle);
+function createSctn(obj) {
+  const sectionContnr = document.createElement('div');
+  sectionContnr.classList.add(obj.classTitle);
 
-  const sctnHeading = document.createElement('h2');
-  sctnHeading.textContent = obj.section;
+  const sectionHdng = document.createElement('h2');
+  sectionHdng.textContent = obj.section;
 
-  const sctnBreak = document.createElement('hr');
-  sctnContainer.append(sctnHeading, sctnBreak);
+  const sectionBrk = document.createElement('hr');
+  sectionContnr.append(sectionHdng, sectionBrk);
 
   if (obj.type === 'descriptive') {
-    obj.items.forEach(item => {
-      sctnContainer.append(addItem(item));
+    obj.items.forEach(itm => {
+      sectionContnr.append(createItm(itm));
     })
   }
 
   if (obj.type === 'table') {
-    obj.items.forEach(item => {
-      sctnContainer.append(addTable(item));
+    obj.items.forEach(itm => {
+      sectionContnr.append(createTbl(itm));
     })
   }
 
   if (obj.addendum.length > 0) {
-    obj.addendum.forEach(obj => {
-      sctnContainer.append(addAddendum(obj));
+    obj.addendum.forEach(adndm => {
+      sectionContnr.append(createAdndm(adndm));
     })
   }
 
-  return sctnContainer;
+  return sectionContnr;
 }
 
-function addItem(item) {
-  const itemContainer = document.createElement('div');
-  itemContainer.classList.add(item.classTitle);
+function createItm(obj) {
+  const itemContnr = document.createElement('div');
+  itemContnr.classList.add(obj.classTitle);
 
-  if (item.name) {
+  if (obj.name) {
     const itemName = document.createElement('h4');
-    itemName.textContent = item.name;
-    itemContainer.append(itemName);
+    itemName.textContent = obj.name;
+    itemContnr.append(itemName);
   }
   
-  if (item.description) {
+  if (obj.description) {
     const itemDescr = document.createElement('p');
-    itemDescr.textContent = item.description;
-    itemContainer.append(itemDescr);
+    itemDescr.textContent = obj.description;
+    itemContnr.append(itemDescr);
   }
   
-  if (item.price) {
+  if (obj.price) {
     const itemPrice = document.createElement('span');
-    itemPrice.textContent = item.price;
-    itemContainer.append(item.price);
+    itemPrice.textContent = obj.price;
+    itemContnr.append(itemPrice);
   }
 
-  return itemContainer;  
+  return itemContnr;  
 }
 
-function addTable(tableObj) {
-  const tableContainer = document.createElement('div');
-  tableContainer.classList.add(tableObj.classTitle);
+function createTbl(obj) {
+  const tableContnr = document.createElement('div');
+  tableContnr.classList.add(obj.classTitle);
 
   const table = document.createElement('table');
+  tableContnr.append(table);
   
-  const tableKeys = Object.keys(tableObj); // [classTitle, tr1, tr2, tr3, tr4]
+  const tableKeys = Object.keys(obj); // [classTitle, tr1, tr2, tr3, tr4]
 
   tableKeys.forEach(key => {
     if (key !== 'classTitle') {
       const tableRow = document.createElement('tr');
-      tableObj[key].forEach(value => {
+      obj[key].forEach(value => {
         const tableData = document.createElement('td');
         tableData.textContent = value;
         tableRow.append(tableData);
@@ -192,26 +193,25 @@ function addTable(tableObj) {
       table.append(tableRow);
     }
   })
-  tableContainer.append(table);
 
-  return tableContainer;
+  return tableContnr;
 }
 
-function addAddendum(obj) {
-  const addendumContainer = document.createElement('div');
-  addendumContainer.classList.add(obj.classTitle);
+function createAdndm(obj) {
+  const addendumContnr = document.createElement('div');
+  addendumContnr.classList.add(obj.classTitle);
 
   if (obj.type === 'descriptive') {
-    obj.items.forEach(item => {
-      addendumContainer.append(addItem(item));
+    obj.items.forEach(itm => {
+      addendumContnr.append(createItm(itm));
     });
   } else if (obj.type === 'table') {
-    obj.items.forEach(item => {
-      addendumContainer.append(addTable(item));
+    obj.items.forEach(itm => {
+      addendumContnr.append(createTbl(itm));
     });
   }
 
-  return addendumContainer;
+  return addendumContnr;
 }
 
 export default displayMenu;
