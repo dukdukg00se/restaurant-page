@@ -1,17 +1,29 @@
 import {createMnSubContnr} from './home.js';
 import '../styles/reviews.css';
 
-let reviews = [
-  {
-    textContent: '"Roses are red, violets are blue, this pizza is delicious, I hope there\'s leftovers too!"',
-    author: 'Chef Boyardee'
-  },
-  {
-    textContent: '"When your tummy is very hungry, go to Michelangiolesca for some pizza that\'s extra yummy!"',
-    author: 'Chef Girlardee'
-  }
-]
+//Constructor to create new review
+function Review(text, auth) {
+  this.textContent = text;
+  this.author = auth;
+}
 
+// Array for restaurant reviews
+let reviews = [];
+
+// Reviews from boyardee and girlardee
+const boyardee = new Review(
+  '"Roses are red, violets are blue, this pizza is delicious, I hope there\'s leftovers too!"',
+  'Chef Boyardee'
+);
+
+const girlardee = new Review(
+  '"When your tummy is very hungry, go to Michelangiolesca for some pizza that\'s extra yummy!"',
+  'Chef Girlardee'
+)
+
+reviews.push(boyardee, girlardee);
+
+// Function creates div that contain restaurant reviews 
 const displayRevws = () => {
   const main = document.querySelector('main');
   main.append(
@@ -56,3 +68,18 @@ const displayRevws = () => {
 }
 
 export default displayRevws;
+
+/** 
+* Practice using constructors 
+* Use Review constructor to replace hardcoded reviews array
+*/
+// let reviews = [
+//   {
+//     textContent: '"Roses are red, violets are blue, this pizza is delicious, I hope there\'s leftovers too!"',
+//     author: 'Chef Boyardee'
+//   },
+//   {
+//     textContent: '"When your tummy is very hungry, go to Michelangiolesca for some pizza that\'s extra yummy!"',
+//     author: 'Chef Girlardee'
+//   }
+// ]
