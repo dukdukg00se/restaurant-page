@@ -116,7 +116,7 @@ menu.push(starters, specials, create);
 
 /** 
 * Practice using object constructors 
-* Replace hardcoded menu array with one using the Section constructor
+* Use Section constructor to replace hardcoded menu array
 */
 // let menu = [
 //   {
