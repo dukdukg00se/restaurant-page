@@ -114,7 +114,7 @@ let create = new Section(
 
 menu.push(starters, specials, create);
 
-// Function creates menu page
+// Function appends Menu content to main element
 const displayMenu = () => {
   const main = document.querySelector('main');
   main.append(

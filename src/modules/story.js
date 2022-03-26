@@ -1,7 +1,7 @@
 import {createMnSubContnr} from './home.js';
 import '../styles/story.css';
 
-// Function creates Our Story page
+// Function appends Our Story content to main element
 const displayStory = () => {
   const main = document.querySelector('main');
   main.append(

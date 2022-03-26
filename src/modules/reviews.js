@@ -23,7 +23,7 @@ const girlardee = new Review(
 
 reviews.push(boyardee, girlardee);
 
-// Function creates div that contain restaurant reviews 
+// Function appends heading and quotes to main element
 const displayRevws = () => {
   const main = document.querySelector('main');
   main.append(
