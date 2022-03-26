@@ -1,8 +1,8 @@
-#reviews-container {
+#reviews-contnr {
   margin-top: -40px;
   gap: 30px;
 }
-#reviews-heading {
+#reviews-hdng {
   font-size: 60px;
 }
 #heading-span {
@@ -27,7 +27,7 @@ cite {
 }
 
 @media (max-width: 580px) {
-  #reviews-heading {
+  #reviews-hdng {
     font-size: 50px;
   }
   
@@ -42,7 +42,7 @@ cite {
     font-size: 16px;
   }
 
-  #reviews-container {
+  #reviews-contnr {
     width: 100%;
     padding: 18px;
     margin: 7vh 0 0;

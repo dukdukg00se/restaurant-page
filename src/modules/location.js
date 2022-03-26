@@ -5,8 +5,8 @@ const displayLocatn = () => {
   const main = document.querySelector('main');
   main.append(
     createMnSubContnr(
-      'main-content',
-      'location-container',
+      'main-contnt',
+      'location-contnr',
       'location-heading',
       'Location & Hours'
     )
@@ -15,7 +15,7 @@ const displayLocatn = () => {
   const contactContnr = document.createElement('address');
   contactContnr.id = 'location';
 
-  const anchorAttrs = [
+  let anchorAttrs = [
     {
       href: 'https://goo.gl/maps/WLfnuS4vb1fdn7eM6',
       textContent: '1420 Baker Street, Suite B, ',
@@ -54,7 +54,7 @@ const displayLocatn = () => {
 
   hoursContnr.append(hoursPrgph);
 
-  const subContnr = document.querySelector('#location-container');
+  const subContnr = document.querySelector('#location-contnr');
   subContnr.append(contactContnr, hoursContnr);
 }
 

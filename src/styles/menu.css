@@ -1,8 +1,8 @@
-#menu-container {
+#menu-contnr {
   padding: 3vw 0;
   gap: 5vh;
 }
-.menu-section {
+.menu-sctn {
   display: flex;
   flex-direction: column;
   gap: 3vh;
@@ -13,7 +13,7 @@
   flex-direction: column;
   text-align: center;
 }
-.toppings-container {
+.toppings-contnr {
   display: flex;
   gap: 2vw;
 }

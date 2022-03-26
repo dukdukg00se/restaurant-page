@@ -9,7 +9,7 @@ function Section(sctn, type, itms, adndm) {
   this.addendum = adndm;
 }
 
-Section.prototype.classTitle = 'menu-section';
+Section.prototype.classTitle = 'menu-sctn';
 
 // Array to hold different menu sections
 let menu = [];
@@ -94,7 +94,7 @@ let create = new Section(
   ],
   [
     {
-      classTitle: 'toppings-container',
+      classTitle: 'toppings-contnr',
       type: 'descriptive',
       items: [
         {
@@ -119,14 +119,14 @@ const displayMenu = () => {
   const main = document.querySelector('main');
   main.append(
     createMnSubContnr(
-      'main-content',
-      'menu-container',
+      'main-contnt',
+      'menu-contnr',
       'menu-heading',
       'Our Menu'
     )
   );
 
-  const subContnr = document.querySelector('#menu-container');
+  const subContnr = document.querySelector('#menu-contnr');
 
   menu.forEach(section => {
     subContnr.append(createSctn(section));
@@ -241,7 +241,7 @@ export default displayMenu;
 // let menu = [
 //   {
 //     section: 'Starters',
-//     classTitle: 'menu-section',
+//     classTitle: 'menu-sctn',
 //     type: 'descriptive',
 //     items: [
 //       {
@@ -274,7 +274,7 @@ export default displayMenu;
 //   },
 //   {
 //     section: 'Specialty Pies',
-//     classTitle: 'menu-section',
+//     classTitle: 'menu-sctn',
 //     type: 'descriptive',
 //     items: [
 //       {
@@ -306,7 +306,7 @@ export default displayMenu;
 //   },
 //   {
 //     section: 'Create Your Own',
-//     classTitle: 'menu-section',
+//     classTitle: 'menu-sctn',
 //     type: 'table',
 //     items: [
 //       {
@@ -319,7 +319,7 @@ export default displayMenu;
 //     ],
 //     addendum: [
 //       {
-//         classTitle: 'toppings-container',
+//         classTitle: 'toppings-contnr',
 //         type: 'descriptive',
 //         items: [
 //           {
