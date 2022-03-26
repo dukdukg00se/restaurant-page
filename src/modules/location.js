@@ -1,5 +1,4 @@
 import {createMnSubContnr, setElmnt} from './home.js';
-
 import '../styles/location.css';
 
 const displayLocatn = () => {
@@ -57,7 +56,6 @@ const displayLocatn = () => {
 
   const subContnr = document.querySelector('#location-container');
   subContnr.append(contactContnr, hoursContnr);
-  main.append(subContnr);
 }
 
 export default displayLocatn;

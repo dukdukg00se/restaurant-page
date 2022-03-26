@@ -1,12 +1,12 @@
 import {createHome} from './modules/home.js';
-import displayReviews from './modules/reviews.js';
+import displayRevws from './modules/reviews.js';
 import displayStory from './modules/story.js';
 import displayMenu from './modules/menu.js';
 import displayLocatn from './modules/location.js';
 
 
 createHome();
-displayReviews();
+displayRevws();
 
 
 
@@ -15,18 +15,16 @@ const main = document.querySelector('main');
 const home = document.querySelector('#logo');
 home.addEventListener('click', () => {
   main.removeChild(main.firstElementChild);
-  displayReviews();
+  displayRevws();
 })
 
-
 const navItems = document.querySelectorAll('li');
-
 navItems.forEach((item) => {
   item.addEventListener('click', (e) => {
 
     if (e.target.id === 'home') {
       main.removeChild(main.firstElementChild);
-      displayReviews();
+      displayRevws();
     } else if (e.target.id === 'story') {
 
       main.removeChild(main.firstElementChild);

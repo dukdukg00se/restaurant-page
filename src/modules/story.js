@@ -22,7 +22,6 @@ const displayStory = () => {
 
   const subContnr = document.querySelector('#story-container'); 
   subContnr.append(paraOne, paraTwo);
-  main.append(subContnr);
 }
 
 export default displayStory;

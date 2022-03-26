@@ -1,7 +1,7 @@
 import {createMnSubContnr} from './home.js';
 import '../styles/reviews.css';
 
-const displayReviews = () => {
+const displayRevws = () => {
   const main = document.querySelector('main');
   main.append(
     createMnSubContnr(
@@ -51,7 +51,6 @@ const displayReviews = () => {
     }
     subContnr.append(blockqte);
   })
-  main.append(subContnr);
 }
 
-export default displayReviews;
+export default displayRevws;
