@@ -21,7 +21,7 @@ let anchorAttrs = [
   },
 ];
 
-// Function appends Location & Hours content to main element
+// Function appends "Location & Hours" content to main element
 const displayLocatn = () => {
   const main = document.querySelector('main');
   main.append(
