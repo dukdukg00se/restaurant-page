@@ -1,29 +1,13 @@
 import {createMnSubContnr} from './home.js';
 import '../styles/reviews.css';
 
-//Constructor to create new review
+// Constructor to create new review
 function Review(text, auth) {
   this.textContent = text;
   this.author = auth;
 }
 
-// Array for restaurant reviews
-let reviews = [];
-
-// Reviews from boyardee and girlardee
-const boyardee = new Review(
-  '"Roses are red, violets are blue, this pizza is delicious, I hope there\'s leftovers too!"',
-  'Chef Boyardee'
-);
-
-const girlardee = new Review(
-  '"When your tummy is very hungry, go to Michelangiolesca for some pizza that\'s extra yummy!"',
-  'Chef Girlardee'
-)
-
-reviews.push(boyardee, girlardee);
-
-// Function appends main-content w/ restaurant name and reviews to main element
+// Function appends main-content containing restaurant name and reviews to main element
 const displayRevws = () => {
   const main = document.querySelector('main');
   main.append(
@@ -41,6 +25,22 @@ const displayRevws = () => {
   headingSpn.id = 'heading-span';
   headingSpn.textContent = 'Michelangiolesca';
   heading.append(headingSpn);
+
+  // Array for restaurant reviews
+  let reviews = [];
+
+  // Reviews from boyardee and girlardee
+  const boyardee = new Review(
+    '"Roses are red, violets are blue, this pizza is delicious, I hope there\'s leftovers too!"',
+    'Chef Boyardee'
+  );
+
+  const girlardee = new Review(
+    '"When your tummy is very hungry, go to Michelangiolesca for some pizza that\'s extra yummy!"',
+    'Chef Girlardee'
+  )
+
+  reviews.push(boyardee, girlardee);
 
   const subContnr = document.querySelector('#reviews-contnr');
 
