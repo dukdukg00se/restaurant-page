@@ -7,7 +7,7 @@ function Review(text, auth) {
   this.author = auth;
 }
 
-// Function appends main-content containing restaurant name and reviews to main element
+// Function appends main-content containing restaurant name and reviews to "main" element
 const displayRevws = () => {
   const main = document.querySelector('main');
   main.append(

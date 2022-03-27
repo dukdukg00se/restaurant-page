@@ -1,7 +1,7 @@
 import {createMnSubContnr, setElmnt} from './home.js';
 import '../styles/location.css';
 
-// Function appends "Location & Hours" content to main element
+// Function appends "Location & Hours" content to "main" element
 const displayLocatn = () => {
   const main = document.querySelector('main');
   main.append(
@@ -58,7 +58,7 @@ const displayLocatn = () => {
   hoursContnr.append(hoursPrgph);
 
   const subContnr = document.querySelector('#location-contnr');
-  
+
   subContnr.append(contactContnr, hoursContnr);
 }
 

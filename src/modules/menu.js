@@ -11,7 +11,7 @@ function Section(sctn, type, itms, adndm) {
 
 Section.prototype.classTitle = 'menu-sctn';
 
-// Function appends "Menu" content to main element
+// Function appends "Menu" content to "main" element
 const displayMenu = () => {
   const main = document.querySelector('main');
   main.append(
