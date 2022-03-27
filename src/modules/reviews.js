@@ -10,6 +10,7 @@ function Review(text, auth) {
 // Function appends main-content containing restaurant name and reviews to "main" element
 const displayRevws = () => {
   const main = document.querySelector('main');
+
   main.append(
     createMnSubContnr(
       'main-contnt',
@@ -24,6 +25,7 @@ const displayRevws = () => {
   const headingSpn = document.createElement('span');
   headingSpn.id = 'heading-span';
   headingSpn.textContent = 'Michelangiolesca';
+  
   heading.append(headingSpn);
 
   // Array for restaurant reviews

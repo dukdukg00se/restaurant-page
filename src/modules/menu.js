@@ -14,6 +14,7 @@ Section.prototype.classTitle = 'menu-sctn';
 // Function appends "Menu" content to "main" element
 const displayMenu = () => {
   const main = document.querySelector('main');
+  
   main.append(
     createMnSubContnr(
       'main-contnt',

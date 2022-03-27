@@ -8,8 +8,6 @@ import displayLocatn from './modules/location.js';
 createHome();
 displayRevws();
 
-
-
 const main = document.querySelector('main');
 
 const home = document.querySelector('#logo');

@@ -8,11 +8,14 @@ import githubLogoWhite from '../assets/images/github-logo-white.svg';
 import '../styles/reset.css';
 import '../styles/home.css';
 
+// Create restaurant page header w/ site nav links
 const createHeader = () => {
   const content = document.querySelector('#content');
 
   const header = document.createElement('header');
   header.id = 'header';
+
+  content.append(header);
 
   const logo = document.createElement('img');
   logo.id = 'logo';
@@ -40,6 +43,7 @@ const createHeader = () => {
       textContent: 'Location & Hours'
     },
   ];
+
   navItemAttrs.forEach(itm => {
     const navItem = document.createElement('li');
     navItem.classList.add('nav-item');
@@ -48,10 +52,12 @@ const createHeader = () => {
   })
 
   header.append(logo, navList);
-  content.append(header);
+
 }
 
+// Add "main" element to parent container "content"
 const createMain = () => {
+  const content = document.querySelector('#content');
   const main = document.createElement('main');  
 
   content.appendChild(main);
@@ -142,6 +148,7 @@ const createFooter = () => {
   content.appendChild(footer);
 };
 
+// Helper functions
 function setElmnt(elmnt, obj) {
   for (let key in obj) {
     switch(key) {

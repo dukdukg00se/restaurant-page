@@ -4,6 +4,7 @@ import '../styles/story.css';
 // Function appends "Our Story" content to "main" element
 const displayStory = () => {
   const main = document.querySelector('main');
+  
   main.append(
     createMnSubContnr(
       'main-contnt',

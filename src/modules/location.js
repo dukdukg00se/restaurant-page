@@ -4,6 +4,7 @@ import '../styles/location.css';
 // Function appends "Location & Hours" content to "main" element
 const displayLocatn = () => {
   const main = document.querySelector('main');
+  
   main.append(
     createMnSubContnr(
       'main-contnt',
