@@ -58,6 +58,7 @@ const displayLocatn = () => {
   hoursContnr.append(hoursPrgph);
 
   const subContnr = document.querySelector('#location-contnr');
+  
   subContnr.append(contactContnr, hoursContnr);
 }
 
