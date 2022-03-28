@@ -1,10 +1,10 @@
 import {createMnSubContnr, setElmnt} from './home.js';
 import '../styles/location.css';
 
-// Function appends "Location & Hours" content to "main" element
+// Appends "Location & Hours" content to "main" element
 const displayLocatn = () => {
   const main = document.querySelector('main');
-  
+
   main.append(
     createMnSubContnr(
       'main-contnt',
@@ -17,7 +17,7 @@ const displayLocatn = () => {
   const contactContnr = document.createElement('address');
   contactContnr.id = 'location';
 
-  // Array holds the attributes and text for address content
+  // Array holds attributes and text for address content
   let anchorAttrs = [
     {
       href: 'https://goo.gl/maps/WLfnuS4vb1fdn7eM6',

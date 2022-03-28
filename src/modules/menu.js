@@ -11,10 +11,10 @@ function Section(sctn, type, itms, adndm) {
 
 Section.prototype.classTitle = 'menu-sctn';
 
-// Function appends "Menu" content to "main" element
+// Appends "Menu" content to "main" element
 const displayMenu = () => {
   const main = document.querySelector('main');
-  
+
   main.append(
     createMnSubContnr(
       'main-contnt',
@@ -135,6 +135,8 @@ const displayMenu = () => {
 }
 
 // Helper functions
+
+// Creates menu section w/ section title and sub container w/ menu items or options
 function createSctn(obj) {
   const sectionContnr = document.createElement('div');
   sectionContnr.classList.add(obj.classTitle);
@@ -166,6 +168,8 @@ function createSctn(obj) {
   return sectionContnr;
 }
 
+// Helper function for createSctn
+// Creates subcontainer that contains menu items and price
 function createItm(obj) {
   const itemContnr = document.createElement('div');
   itemContnr.classList.add(obj.classTitle);
@@ -191,6 +195,8 @@ function createItm(obj) {
   return itemContnr;  
 }
 
+// Helper function for createSctn
+// Creates menu table with info to create own pizza
 function createTbl(obj) {
   const tableContnr = document.createElement('div');
   tableContnr.classList.add(obj.classTitle);
@@ -215,6 +221,8 @@ function createTbl(obj) {
   return tableContnr;
 }
 
+// Helper function for createSctn
+// Creates section with extra info, i.e., topping options
 function createAdndm(obj) {
   const addendumContnr = document.createElement('div');
   addendumContnr.classList.add(obj.classTitle);

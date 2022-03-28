@@ -7,7 +7,7 @@ function Review(text, auth) {
   this.author = auth;
 }
 
-// Function appends main-content containing restaurant name and reviews to "main" element
+// Appends "main-content" sub div containing title and reviews to "main" element
 const displayRevws = () => {
   const main = document.querySelector('main');
 
@@ -25,13 +25,13 @@ const displayRevws = () => {
   const headingSpn = document.createElement('span');
   headingSpn.id = 'heading-span';
   headingSpn.textContent = 'Michelangiolesca';
-  
+
   heading.append(headingSpn);
 
   // Array for restaurant reviews
   let reviews = [];
 
-  // Reviews from boyardee and girlardee
+  // Create reviews for boyardee, girlardee
   const boyardee = new Review(
     '"Roses are red, violets are blue, this pizza is delicious, I hope there\'s leftovers too!"',
     'Chef Boyardee'
