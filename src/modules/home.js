@@ -8,7 +8,7 @@ import githubLogoWhite from '../assets/images/github-logo-white.svg';
 import '../styles/reset.css';
 import '../styles/home.css';
 
-// Create restaurant page header w/ site nav links
+// Adds restaurant page header w/ site nav links to parent container "content"
 const createHeader = () => {
   const content = document.querySelector('#content');
 
@@ -52,18 +52,18 @@ const createHeader = () => {
   })
 
   header.append(logo, navList);
-
 }
 
-// Add "main" element to parent container "content"
+// Adds "main" element to parent container
 const createMain = () => {
   const content = document.querySelector('#content');
+
   const main = document.createElement('main');  
 
   content.appendChild(main);
 };
 
-
+// Creates/appends footer with links to social media and Github
 const createFooter = () => {
   const content = document.querySelector('#content');
   const footer = document.createElement('footer');
@@ -104,6 +104,7 @@ const createFooter = () => {
     },
   ]
 
+  // Can also use forEach or map method to create media anchor,img elements
   for (let i = 0; i < imageAttrs.length; i++) {
     const mediaLink = document.createElement('a');
     mediaLink.classList.add('media-link');
@@ -118,7 +119,6 @@ const createFooter = () => {
     mediaContainer.appendChild(mediaLink);
   }
 
-
   const creditContainer = document.createElement('div');
   creditContainer.id = 'credits';
 
@@ -132,9 +132,8 @@ const createFooter = () => {
   githubImage.alt = '';
   githubImage.id = 'github-logo';
 
-  // want to change img bkgrnd color on hover
-  // but can't change svg fill attr when using img tag to insert svg
-  // change img src for similar effect
+  // Can't change svg fill when using img tag to insert svg
+  // To change img bkgrnd color on hover change img
   githubLink.addEventListener('mouseenter', function() {
     githubImage.src = githubLogoWhite;
   });
@@ -149,6 +148,8 @@ const createFooter = () => {
 };
 
 // Helper functions
+
+// Sets an element's attributes, text, and creates/appends span content to element
 function setElmnt(elmnt, obj) {
   for (let key in obj) {
     switch(key) {
@@ -166,6 +167,7 @@ function setElmnt(elmnt, obj) {
   }
 }
 
+// Initializes a sub container that holds the content for each module
 const createMnSubContnr = (parentCls, parentId, headerId, headerTxt) => {
   const parent = document.createElement('div');
   parent.classList.add(parentCls);
@@ -180,7 +182,7 @@ const createMnSubContnr = (parentCls, parentId, headerId, headerTxt) => {
   return parent;
 };
 
-
+// Initializes base web page elements across all modules
 const createHome = () => {
   createHeader();
   createMain();
